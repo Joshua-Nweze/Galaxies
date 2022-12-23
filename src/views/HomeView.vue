@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-fluid row">
+    <div class="col-3">
+      <Sidenav />
+    </div>
+    <div class="col-9">
+      <Sliders />
+      <TrendingProducts />
+    </div>
+    
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+<script setup>
+import Sidenav from '@/components/Main/Sidenav';
+import Sliders from '@/components/Main/Sliders';
+import TrendingProducts from '@/components/Main/TrendingProducts'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
 </script>
