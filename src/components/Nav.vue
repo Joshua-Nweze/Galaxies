@@ -1,43 +1,79 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <router-link class="navbar-brand" to="/">
+      <div class="container-fluid row">
+        <div class="col-3 col-lg-3 col-sm-4 order-lg-1 order-1 order-lg-1">
+           <router-link class="navbar-brand" to="/">
             <img src="../assets/imgs/logo.png" alt="">
         </router-link>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Pricing</a>
-            <a class="nav-link disabled">Disabled</a>
+        </div>
 
-          </div>
-        </div> -->
-        <div class="d-flex justify-contents-end">
-            <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search">
-                <button class="btn nav-btn text-muted" type="submit">Search</button>
-            </div>
-                
-            <div class="position-relative" style="margin-left: 200px; margin-right: 10px">
-                <button type="button" class="btn nav-btn text-muted"><i class="bi bi-cart"></i> Cart 
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-counter">
-                        0
-                        <span class="visually-hidden">Cart items</span>
-                    </span>
-                </button>
-                
-                
-            </div>
-            
+        <div class="col-12 d-flex col-lg-5 col-sm-12 order-lg-2 order-3 order-lg-2">
+            <input class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search">
+            <button class="btn nav-btn text-muted" type="submit">Search</button>
+        </div>
+
+        <div class="col-8 d-flex justify-content-end col-lg-3 col-sm-8 order-2 order-lg-3">
             <div>
-                <button type="button" class="btn nav-btn text-muted">Sign up / Login</button>
+                <button type="button" class="btn nav-btn text-muted"><i class="bi bi-person"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
+            </div>
+
+            <div class="position-relative">
+                  <button type="button" class="btn nav-btn text-muted"><i class="bi bi-cart"></i> <span class="d-none d-sm-inline">Cart</span>  
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-counter">
+                          0
+                          <span class="visually-hidden">Cart items</span>
+                      </span>
+                  </button>
             </div>
         </div>
+
+        <!-- <div class="row">
+  <div class="col-4 col-lg-4 order-1 order-lg-1">Column 1</div>
+  <div class="col-12 col-lg-4 order-3 order-lg-2">Column 2</div>
+  <div class="col-8 col-lg-4 order-2 order-lg-3">Column 3</div>
+</div> -->
+       
+         <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div> -->
+        <!-- <div class="d-flex justify-content-end">
+          <div class="d-flex">
+           
+                
+            <div style="margin-left: 10px">
+                <button type="button" class="btn nav-btn text-muted">Sign up / Login</button>
+            </div>
+          </div>
+            
+          <div>
+              <div class="position-relative" style="margin-right: 10px">
+                  <button type="button" class="btn nav-btn text-muted"><i class="bi bi-cart"></i> Cart 
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-counter">
+                          0
+                          <span class="visually-hidden">Cart items</span>
+                      </span>
+                  </button>
+              </div>
+          </div>
+        </div> -->
+
       </div>
     </nav>
   </div>

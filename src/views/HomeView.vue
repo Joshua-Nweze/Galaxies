@@ -7,13 +7,14 @@
       <Sliders />
       <TrendingProducts />
     </div>
-    
   </div>
+  <Footer />
 </template>
 
 <script setup>
 import Sidenav from '@/components/Main/Sidenav';
 import Sliders from '@/components/Main/Sliders';
 import TrendingProducts from '@/components/Main/TrendingProducts'
+import Footer from '@/components/Footer'
 
 </script>
