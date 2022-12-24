@@ -1,17 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CartView from '../views/CartView.vue'
+import AuthView from '../views/AuthView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      title: 'Galaxies - Online Marketplace'
+    }
   },
   {
     path: '/cart',
     name: 'cart',
-    component: CartView
+    component: CartView,
+    meta: {
+      title: 'Cart'
+    }
+  },
+  {
+    path: '/auth',
+    name: 'auth',
+    component: AuthView,
+    meta: {
+      title: 'Authentication'
+    }
   },
   {
     // path: '/about',
@@ -26,6 +41,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`
+  next()
 })
 
 export default router

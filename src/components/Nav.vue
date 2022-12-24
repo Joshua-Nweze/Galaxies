@@ -17,16 +17,10 @@
             <div class="dropdown">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Log In</a></li>
+                    <li><router-link to="/auth" class="dropdown-item" href="#">Log In</router-link></li>
                     <li><a class="dropdown-item" href="#">Create an account</a></li>
                 </ul>
             </div>
-
-            <!-- <div>
-                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
-                </button>
-            </div> -->
 
             <div class="position-relative">
                   <router-link to="/cart" class="btn nav-btn text-muted"><i class="bi bi-cart"></i> <span class="d-none d-sm-inline">Cart</span>  
