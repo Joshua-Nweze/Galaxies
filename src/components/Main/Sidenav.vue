@@ -40,7 +40,7 @@ function hideSubSidenav() {
         height: 500px;
     }
     .row{
-        border-bottom: 1px solid ;
+        border-bottom: 1px solid;
         box-sizing: border-box;
         height: 50px;
     }

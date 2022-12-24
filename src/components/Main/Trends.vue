@@ -3,7 +3,7 @@
         <div class="trends">
             <div class="mr-5" v-for="trends in trending" :key="trends.id">
                 <div class="card mt-2" style="width: 13rem; margin-right: 10px">
-                    <img  class="card-img-top" src={{trends.image}} :alt="trends.name + ' image'">
+                    <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'">
                     <div class="card-body">
                         <span class="title fw-bold">{{trends.name}}</span> <br>
                         <span class="amount fw-bold">₦{{trends.price}}</span>
@@ -43,7 +43,7 @@ let trending = ref(trendingProducts.trending)
     }
 
     .card-body{
-        padding: 0;
+        padding: 5px;
         margin: 0;
     }
 

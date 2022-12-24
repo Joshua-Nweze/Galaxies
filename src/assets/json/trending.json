@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Auking mini projector",
             "price": "125,000",
-            "image": "@/assets/imgs/trending/auking-projector.jpg"
+            "image": "src/assets/imgs/trending/auking-projector.jpg"
         },
         {
             "id": 2,

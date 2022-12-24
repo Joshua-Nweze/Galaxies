@@ -2,7 +2,7 @@
     <footer>
         <div class="container">
             <div class="row footer-links">
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>About Galaxies</h4>
                     <ul>
                         <li><i class="bi bi-chevron-right"></i> About us</li>
@@ -13,14 +13,14 @@
                         <li><i class="bi bi-chevron-right"></i> Premium Services</li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>Support</h4>
                     <ul>
                         <li><i class="bi bi-chevron-right"></i> Safety tips</li>
                         <li><i class="bi bi-chevron-right"></i> Contact</li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>Socials</h4>
                     <span class="socials"><i class="bi bi-facebook"></i></span>
                     <span class="socials"><i class="bi bi-twitter"></i></span>

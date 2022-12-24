@@ -1,10 +1,12 @@
 <template>
   <Nav />
   <router-view/>
+  <Footer />
 </template>
 
 <script setup>
 import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 </script>
 
 
@@ -16,5 +18,15 @@ import Nav from '@/components/Nav'
   /* text-align: center; */
   color: #2c3e50;
 }
+
+ .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+ }
 
 </style>

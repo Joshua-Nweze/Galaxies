@@ -1,26 +1,27 @@
 <template>
-    <div class="container row">
-        <div class="col-9 hero position-relative">
-            <div class="hero-words position-absolute">
-                <img src="../../assets/imgs/dot-grp.png" class="position-absolute dots" alt="" height="300px">
-                <span class="fs-2 fw-bolder">Galaxies</span> <br>
-                <span class="fs-5">The online marketplace you can trust </span><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-sm-12 col-md-9 hero position-relative">
+                <div class="col-5 hero-words position-absolute">
+                    <img src="../../assets/imgs/dot-grp.png" class="position-absolute dots" alt="" height="300px">
+                    <span class="fs-2 fw-bolder">Galaxies</span> <br>
+                    <span class="fs-5">The online marketplace you can trust </span><br>
 
-                <button type="button" class="btn main-btn text-light mt-3">Learn more</button>
-            </div>
-            <img class="position-absolute handz" src="../../assets/imgs/handz/thumbs-up.png" alt="" width="500px">
-
-        </div>
-
-        <div class="col-3">
-            <div class="col-12 sm-hero text-center pt-4">
-                <span class="mt-5 fw-bold">Wanna sell something?</span> <br>
-                <button type="button" class="btn main-btn text-light mt-3"><i class="bi bi-bag-plus"></i> Sell a product</button>
+                    <button type="button" class="btn main-btn text-light mt-3">Learn more</button>
+                </div>
+                <img class="position-absolute handz" src="../../assets/imgs/handz/thumbs-up.png" alt="" width="500px">
             </div>
 
-            <div class="col-12 sm-hero mt-1 text-center pt-4">
-                <span class="fw-bold">See Premium services</span>
-                <button type="button" class="btn main-btn text-light mt-3"><i class="bi bi-gem"></i> Premium Services</button>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sm-hero-container">
+                <div class="col-lg-12 col-md-12 col-6 col-xs-6 sm-hero text-center pt-4">
+                    <span class="mt-5 fw-bold">Wanna sell something?</span> <br>
+                    <button type="button" class="btn main-btn text-light mt-2 col-11"><i class="bi bi-bag-plus"></i> Sell a product</button>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-6 col-xs-6 sm-hero text-center pt-4 sm-hero-second">
+                    <span class="mt-5 fw-bold">See Premium services</span>
+                    <button type="button" class="btn main-btn text-light mt-2 col-11"><i class="bi bi-gem"></i> Premium Services</button>
+                </div>
             </div>
         </div>
     </div>
@@ -49,10 +50,48 @@
 
     .handz{
         right: -130px;
-        /* object-fit: cover; */
     }
 
     .main-btn{
         background: #3d2272;
     }
+
+     @media only screen and (max-width: 480px) {
+        .handz{
+            right: -200px;
+        }
+        .sm-hero-container{
+            margin-top: 10px;
+            display: flex;
+        }
+        .sm-hero-second{
+            margin-left: 5px;
+        }
+        
+     }
+
+     @media only screen and (min-width: 481px) and (max-width: 767px) {
+        .sm-hero-second{
+            margin-left: 5px;
+        }
+        .sm-hero-container{
+            margin-top: 10px;
+            display: flex;
+        }
+     }
+
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        .sm-hero-container{
+            display: block;
+        }
+        .sm-hero-second{
+            margin-top: 5px;
+        }
+    }
+
+     @media only screen and (min-width: 1024px) {
+        .sm-hero-second{
+            margin-top: 5px;
+        }
+     }
 </style>
