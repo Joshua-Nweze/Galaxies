@@ -6,6 +6,7 @@
     <div class="col-9">
       <Sliders />
       <TrendingProducts />
+      <RecentlyUploaded />
     </div>
   </div>
   <Footer />
@@ -15,6 +16,7 @@
 import Sidenav from '@/components/Main/Sidenav';
 import Sliders from '@/components/Main/Sliders';
 import TrendingProducts from '@/components/Main/TrendingProducts'
+import RecentlyUploaded from '@/components/Main/RecentlyUploaded'
 import Footer from '@/components/Footer'
 
 </script>
