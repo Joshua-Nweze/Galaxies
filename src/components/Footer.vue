@@ -20,11 +20,11 @@
                         <li><i class="bi bi-chevron-right"></i> Contact</li>
                     </ul>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="col-lg-4 col-md-6 col-sm-12 socials">
                     <h4>Socials</h4>
-                    <span class="socials"><i class="bi bi-facebook"></i></span>
-                    <span class="socials"><i class="bi bi-twitter"></i></span>
-                    <span class="socials"><i class="bi bi-instagram"></i></span>
+                    <span class="social"><i class="bi bi-facebook"></i></span>
+                    <span class="social"><i class="bi bi-twitter"></i></span>
+                    <span class="socias"><i class="bi bi-instagram"></i></span>
                 </div>
             </div>
 
@@ -55,12 +55,18 @@
         padding-top: 30px;
     }
 
-    .socials{
+    .social{
         margin: 0 5px;
     }
 
     .copyright{
         background: #3d2272;
         padding: 5px 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .socials{
+            margin-bottom: 15px;
+        }
     }
 </style>
