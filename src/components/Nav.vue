@@ -17,8 +17,8 @@
             <div class="dropdown">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
-                    <li><router-link to="/auth" class="dropdown-item" href="#">Log In</router-link></li>
-                    <li><a class="dropdown-item" href="#">Create an account</a></li>
+                    <li><router-link to="/login" class="dropdown-item" href="#">Log In</router-link></li>
+                    <li><router-link to="/signup" class="dropdown-item" href="#">Create an account</router-link></li>
                 </ul>
             </div>
 
@@ -66,6 +66,12 @@
     .dropdown-item:hover{
         background: #b8a2e3;
     }
+
+    /* @media only screen and (max-width: 480px) {
+        .dropdown-menu{
+           float: left;
+        }
+    } */
     
      @media only screen and (min-width: 481px) and (max-width: 1023px) {
         .buttons{

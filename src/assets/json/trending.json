@@ -4,25 +4,22 @@
             "id": 1,
             "name": "Auking mini projector",
             "price": "125,000",
-            "image": "src/assets/imgs/trending/auking-projector.jpg"
+            "image": "nike-airx.jpeg"
         },
         {
             "id": 2,
             "name": "iPhone 13 236 ROM",
-            "price": "385,000",
-            "image": "@/assets/imgs/trending/iphone13.png"
+            "price": "385,000"
         },
         {
             "id": 3,
             "name": "Nike Airx",
-            "price": "32,000",
-            "image": "@/assets/imgs/trending/nike-airx.jpeg"
+            "price": "32,000"
         },
         {
             "id": 4,
             "name": "1 pack of Bic pen",
-            "price": "750",
-            "image": "bic.jpg"
+            "price": "750"
         }
     ]
 }

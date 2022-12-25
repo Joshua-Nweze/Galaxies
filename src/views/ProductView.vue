@@ -1,11 +1,11 @@
 <template>
     <div>
-        <Login />
+        <ViewProduct />
     </div>
 </template>
 
 <script setup>
-import Login from '@/components/Auth/Login.vue'
+import ViewProduct from "@/components/Products/ViewProduct.vue";
 </script>
 
 <style scoped>

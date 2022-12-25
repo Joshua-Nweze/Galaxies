@@ -1,16 +1,17 @@
 <template>
     <div class="trends-container">
-        <div class="trends">
+        <router-link to="/product" class="trends">
             <div class="mr-5" v-for="trends in trending" :key="trends.id">
                 <div class="card mt-2" style="width: 13rem; margin-right: 10px">
-                    <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'">
+                    <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> -->
+                    <img v-if="trends.image" class="card mt-2" src="trends.image" alt="">
                     <div class="card-body">
                         <span class="title fw-bold">{{trends.name}}</span> <br>
-                        <span class="amount fw-bold">₦{{trends.price}}</span>
+                        <span class="amount fw-bold">{{trends.price}}</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
