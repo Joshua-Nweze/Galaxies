@@ -1,17 +1,17 @@
 <template>
     <div class="trends-container">
-        <router-link to="/product" class="trends">
+        <div class="trends">
             <div class="mr-5" v-for="trends in trending" :key="trends.id">
-                <div class="card mt-2" style="width: 13rem; margin-right: 10px">
+                <router-link @click="toProduct(trends)" :to="'/product/' + trends.name.split(' ').join('-') + '-' + trends.id" class="card mt-2 router" style="width: 13rem; margin-right: 10px">
                     <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> -->
-                    <img v-if="trends.image" class="card mt-2" src="trends.image" alt="">
+                    <img v-if="trends.image" class="card-img-top img-fluid" :src="require(`../../assets/imgs/${trends.image}`)" alt="" style="height: 180px">
                     <div class="card-body">
                         <span class="title fw-bold">{{trends.name}}</span> <br>
                         <span class="amount fw-bold">{{trends.price}}</span>
                     </div>
-                </div>
+                </router-link>
             </div>
-        </router-link>
+        </div>
     </div>
 </template>
 
@@ -19,8 +19,13 @@
 import { ref } from '@vue/reactivity'
 import trendingProducts from '../../assets/json/trending.json'
 
+let emit = defineEmits(['toProduct'])
+
 let trending = ref(trendingProducts.trending)
 
+function toProduct(data) {
+    emit('toProduct', data)
+}
 </script>
 
 <style scoped>
@@ -37,6 +42,7 @@ let trending = ref(trendingProducts.trending)
     }
     .title{
         font-size: 16px;
+        color: #2c3e50;
     }
 
     .amount{

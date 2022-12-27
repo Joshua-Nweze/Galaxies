@@ -5,7 +5,7 @@
     </div>
     <div class="col-lg-9 col-md-12 col-sm-12">
       <Sliders />
-      <TrendingProducts />
+      <TrendingProducts @toProduct="toProduct"/>
       <RecentlyUploaded />
     </div>
   </div>
@@ -23,4 +23,9 @@ import TrendingProducts from '@/components/Main/TrendingProducts'
 import RecentlyUploaded from '@/components/Main/RecentlyUploaded'
 // import Footer from '@/components/Footer'
 
+let emit = defineEmits(['toProduct'])
+
+function toProduct(data) {
+  emit("toProduct", data);
+}
 </script>

@@ -1,10 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CartView from '../views/CartView.vue'
-import LoginView from '../views/LoginView.vue'
-import SignupView from '../views/SignupView.vue'
-import ProductView from '../views/ProductView.vue'
-
 
 const routes = [
   {
@@ -18,7 +13,7 @@ const routes = [
   {
     path: '/cart',
     name: 'cart',
-    component: CartView,
+    component: () => import(/* webpackChunkName: "cart" */ "../views/CartView"),
     meta: {
       title: 'Cart'
     }
@@ -26,7 +21,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: LoginView,
+    component: () => import(/* webpackChunkName: "login" */ "../views/LoginView"),
     meta: {
       title: 'Login'
     }
@@ -34,17 +29,25 @@ const routes = [
   {
     path: '/signup',
     name: 'signup',
-    component: SignupView,
+    component: () => import(/* webpackChunkName: "signup" */ "../views/SignupView"),
     meta: {
       title: 'Signup'
     }
   },
   {
-    path: '/product',
+    path: '/product/:productName',
     name: 'product',
-    component: ProductView,
+    component: () => import(/* webpackChunkName: "product" */ "../views/ProductView"),
     meta: {
       title: 'Product'
+    }
+  },
+  {
+    path: '/:pathMatch(.*)*', 
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ "../components/404"),
+    meta: {
+      title: '404 page'
     }
   },
   {

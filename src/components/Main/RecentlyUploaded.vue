@@ -1,6 +1,6 @@
 <template>
     <div class="mt-5">
-        <span class="trend fw-bold">Recently upoaded </span>
+        <span class="trend fw-bold">Recently uploaded </span>
         <Recents />
     </div>
 </template>

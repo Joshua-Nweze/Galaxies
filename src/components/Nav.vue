@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid row">
         <div class="col-3 col-lg-3 col-md-3 col-sm-4 order-lg-1 order-1 order-lg-1">
-           <router-link class="navbar-brand" to="/">
+           <router-link class="navbar-brand" :to="{name: 'home'}">
             <img src="../assets/imgs/logo.png" alt="">
         </router-link>
         </div>
@@ -13,7 +13,7 @@
             <button class="btn nav-btn text-muted" type="submit">Search</button>
         </div>
 
-        <div class="col-8 d-flex justify-content-end col-lg-3  col-md-8 col-sm-8 order-2 order-lg-3 buttons">
+        <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-8 order-2 order-lg-3 buttons">
             <div class="dropdown">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
@@ -25,7 +25,7 @@
             <div class="position-relative">
                   <router-link to="/cart" class="btn nav-btn text-muted"><i class="bi bi-cart"></i> <span class="d-none d-sm-inline">Cart</span>  
                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill cart-counter">
-                          0
+                          {{numOfCartItems}}
                           <span class="visually-hidden">Cart items</span>
                       </span>
                   </router-link>
@@ -37,6 +37,24 @@
 </template>
 
 <script setup>
+import { computed, onUpdated, ref } from '@vue/runtime-core'
+
+const props = defineProps(['cart'])
+
+let {cart} = props
+
+let numOfCartItems = computed(() => {
+    let qty = []
+
+    for (let index = 0; index < cart.length; index++) {
+        qty.push(cart[index].qty);
+    }
+
+    let reduced = qty.reduce((acc, cur) => acc + cur, 0)
+
+    return reduced
+})
+
 </script>
 
 <style scoped>
