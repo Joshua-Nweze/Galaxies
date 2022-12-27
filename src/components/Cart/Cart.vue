@@ -17,7 +17,7 @@
                             <span class="text-danger" @click="removeFromCart(index)"><i class="bi bi-trash"></i> Remove</span>
                         </div>
                         <div class="col-4 text-end">
-                            <span>₦ {{total}}</span> <br>
+                            <span>₦ {{item.price * item.qty}}</span> <br>
                             <!-- <span><i class="bi bi-dash-circle"></i> 1 <i class="bi bi-plus-circle"></i></span> -->
                             <span>Quantity: {{item.qty}}</span>
                         </div>
@@ -122,8 +122,8 @@ onUpdated(() => {
     }
 
     @media only screen and (min-width: 1024px) {
-        /* .products{
-            margin-bottom: 300px;
-        } */
+        img{
+            height: 50px;
+        }
     }
 </style>

@@ -9,6 +9,7 @@
    @addToCart="addToCart"
    :cart="cart"
    @removeFromCart="removeFromCart"
+   @save="save"
   />
   <Footer />
 </template>
@@ -21,6 +22,7 @@ import { computed, onUpdated } from '@vue/runtime-core';
 
 let product = ref()
 let cart = reactive([])
+let saved = reactive([])
 
 function toProduct(data) {
   product.value = data
@@ -32,6 +34,10 @@ function addToCart(data) {
 
 function removeFromCart(index) {
   cart.splice(index, 1)
+}
+
+function save(data) {
+  saved.push(data)
 }
 
 </script>

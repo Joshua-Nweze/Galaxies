@@ -1,9 +1,39 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid row">
-        <div class="col-3 col-lg-3 col-md-3 col-sm-4 order-lg-1 order-1 order-lg-1">
-           <router-link class="navbar-brand" :to="{name: 'home'}">
+      <div class="container-fluid row position-relative">
+        <!-- Collapsible nav -->
+        <div class="sideNav" id="a">
+            <span class="d-flex justify-content-end"><i class="bi bi-x-lg text-danger" @click="hideNav"></i></span>
+            <div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <div class="nav-link dropdown row d-flex" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="col-2">img</div>
+                            <div class="col-8">Dropdown</div>
+                            <div class="col-2"><i class="bi bi-caret-down-fill"></i></div>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item row d-flex" href="#">
+                                    <div class="col-2">img</div>
+                                    <div class="col-10">Action</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <!-- Collapsible nav ends -->
+        <div class="col-3 col-lg-3 col-md-3 col-sm-4 order-lg-1 order-1 order-lg-1 d-flex align-items-center">
+            <div>
+                <span @click="showNav" class="navbar-toggler">
+                    <i class="bi bi-list "></i>
+                </span>
+            </div>
+           <router-link class="navbar-brand" to="/">
             <img src="../assets/imgs/logo.png" alt="">
         </router-link>
         </div>
@@ -13,7 +43,7 @@
             <button class="btn nav-btn text-muted" type="submit">Search</button>
         </div>
 
-        <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-8 order-2 order-lg-3 buttons">
+        <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-6 order-2 order-lg-3 buttons">
             <div class="dropdown">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
@@ -33,6 +63,7 @@
         </div>
       </div>
     </nav>
+
   </div>
 </template>
 
@@ -55,9 +86,32 @@ let numOfCartItems = computed(() => {
     return reduced
 })
 
+function showNav() {
+    document.getElementById('a').style.left = 0
+}
+function hideNav() {
+    document.getElementById('a').style.left = '-10000px'
+}
+
 </script>
 
 <style scoped>
+    .sideNav{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -1000px;
+        position: fixed;
+        background: white;
+        z-index: 99;
+        height: 100vh;
+        overflow-y: scroll;
+        transition: ease-in .5s;
+    }
+
+    .dropdown-menu li{
+        border-bottom: #7b52cc 1px solid;
+    }
     nav {
         background: #3d2272;
         color: ghostwhite;
@@ -83,6 +137,11 @@ let numOfCartItems = computed(() => {
 
     .dropdown-item:hover{
         background: #b8a2e3;
+    }
+
+    .navbar-toggler{
+        color: ghostwhite;
+        border-color: ghostwhite;
     }
 
     /* @media only screen and (max-width: 480px) {

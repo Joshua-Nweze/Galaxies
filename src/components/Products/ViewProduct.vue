@@ -11,35 +11,40 @@
                 <div class="qty mt-3">Quantity <i class="bi bi-dash-circle" @click="decreaseQty"></i> {{qty}} <i class="bi bi-plus-circle" @click="increaseQty"></i></div>
                 <div class="desc mt-2" v-if="product.description">{{product.description}}</div>
                 <div class="seller-contact mt-3"><button class="btn">Seller contact</button></div>
-                <div class="cart-and-fav mt-3"><button class="btn add-to-cart" @click="addToCart(product)">Add to cart</button><span class="add-to-fav" @click="save" id="save"><i class="bi bi-heart"></i></span></div>
+                <div class="cart-and-fav mt-3"><button class="btn add-to-cart" @click="addToCart(product)">Add to cart</button><span class="add-to-fav" @click="save(product)" id="save"><i class="bi bi-heart"></i></span></div>
             </div>
         </div>
 
     <div class="d-flex justify-content-end row" v-if="showAlert">
         <div class="col-lg-4 col-md-5 col-sm-10 alert alert-success alert-dismissible fade show" role="alert">
-            Product successfully added to cart
+            {{ alertMessage }}
         <button type="button" class="btn-close" @click="closeAlert" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>  
     </div>
     </div>
+
+    <div>
+        {{product.name}}
+    </div>
 </template>
 
 <script setup>
-import { ref } from '@vue/reactivity';
+import { reactive, ref } from '@vue/reactivity';
 
 const props = defineProps(['product'])
-const emit = defineEmits(['addToCart'])
+const emit = defineEmits(['addToCart', 'save'])
 
 let qty = ref(1)
 let product = ref(props.product)
 let showAlert = ref(false)
-
-
+let alertMessage = ref('')
+// let loggedIn = ref(false)
 
 function addToCart(data){
     emit('addToCart', data)
     data.qty = qty.value
     showAlert.value = true
+    alertMessage.value = "Product successfully added to cart"
 }
 
 function closeAlert(){
@@ -57,9 +62,18 @@ function increaseQty() {
 }
 
 
-// function save (){
-//     document.getElementById('save').style.backgroundColor = 'red'
-// }
+function save (data){
+    // if (!loggedIn) {
+    //     showAlert.value = true
+    //     alertMessage.value = "Login to save products"
+    // } else if(loggedIn){
+        emit('save', data)
+        showAlert.value = true
+        alertMessage.value = "Product successfully saved"
+    // }
+}
+
+
 </script>
 
 <style scoped>
