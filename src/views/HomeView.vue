@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid row">
-    <div class="col-lg-3 d-none d-lg-block">
+    <div class="col-lg-3 d-none d-lg-block sidenavbg">
       <Sidenav />
     </div>
     <div class="col-lg-9 col-md-12 col-sm-12">
@@ -13,7 +13,9 @@
 </template>
 
 <style>
-
+/* .sidenavbg{
+  /* position: fixed;
+} */
 </style>
 
 <script setup>

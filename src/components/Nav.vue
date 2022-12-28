@@ -3,28 +3,26 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid row position-relative">
         <!-- Collapsible nav -->
-        <div class="sideNav" id="a">
+        <div class="sideNav" id="sideNav">
             <span class="d-flex justify-content-end"><i class="bi bi-x-lg text-danger" @click="hideNav"></i></span>
-            <div>
+            <div v-for="nav in navList" :key="nav.index">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <div class="nav-link dropdown row d-flex" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="col-2">img</div>
-                            <div class="col-8">Dropdown</div>
+                            <div class="col-2"><img :src="require(`../assets/imgs/${nav.image}`)" alt="" class="img-fluid"></div>
+                            <div class="col-8">{{nav.name}}</div>
                             <div class="col-2"><i class="bi bi-caret-down-fill"></i></div>
                         </div>
-                        <ul class="dropdown-menu">
-                            <li>
+                        <ul class="dropdown-menu" >
+                            <li v-for="dropdown in nav.dropdown" :key="dropdown.index">
                                 <a class="dropdown-item row d-flex" href="#">
-                                    <div class="col-2">img</div>
-                                    <div class="col-10">Action</div>
+                                    <div class="col-12 d-down-item">{{ dropdown.name }}</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            
         </div>
         <!-- Collapsible nav ends -->
         <div class="col-3 col-lg-3 col-md-3 col-sm-4 order-lg-1 order-1 order-lg-1 d-flex align-items-center">
@@ -33,9 +31,9 @@
                     <i class="bi bi-list "></i>
                 </span>
             </div>
-           <router-link class="navbar-brand" to="/">
-            <img src="../assets/imgs/logo.png" alt="">
-        </router-link>
+            <router-link class="navbar-brand" to="/" style="z-index: 2">
+                <img src="../assets/imgs/logo.png" alt="">
+            </router-link>
         </div>
 
         <div class="col-12 d-flex justify-content-start col-lg-5 col-sm-12 order-lg-2 order-3 order-lg-2">
@@ -43,7 +41,7 @@
             <button class="btn nav-btn text-muted" type="submit">Search</button>
         </div>
 
-        <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-6 order-2 order-lg-3 buttons">
+        <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-4 order-2 order-lg-3 buttons">
             <div class="dropdown">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
@@ -69,10 +67,16 @@
 
 <script setup>
 import { computed, onUpdated, ref } from '@vue/runtime-core'
+import { useNavItem } from '@/store/useNavItem'
+import { storeToRefs } from 'pinia'
 
 const props = defineProps(['cart'])
+let navItem = useNavItem()
 
 let {cart} = props
+let { navItems } = storeToRefs(navItem)
+
+let navList = navItems.value.nav
 
 let numOfCartItems = computed(() => {
     let qty = []
@@ -87,10 +91,10 @@ let numOfCartItems = computed(() => {
 })
 
 function showNav() {
-    document.getElementById('a').style.left = 0
+    document.getElementById('sideNav').style.left = 0
 }
 function hideNav() {
-    document.getElementById('a').style.left = '-10000px'
+    document.getElementById('sideNav').style.left = '-1550px'
 }
 
 </script>
@@ -100,7 +104,7 @@ function hideNav() {
         top: 0;
         right: 0;
         bottom: 0;
-        left: -1000px;
+        left: -1550px;
         position: fixed;
         background: white;
         z-index: 99;
@@ -109,9 +113,10 @@ function hideNav() {
         transition: ease-in .5s;
     }
 
-    .dropdown-menu li{
-        border-bottom: #7b52cc 1px solid;
+    .d-down-item{
+        color: #777777;
     }
+
     nav {
         background: #3d2272;
         color: ghostwhite;

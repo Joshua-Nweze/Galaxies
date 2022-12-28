@@ -1,0 +1,82 @@
+{
+    "nav": [
+        {
+            "name": "Electronics",
+            "dropdown": [
+                {"name": "Electronic accessories"},
+                {"name": "TV and DVD"},
+                {"name": "Laptops and Computers"},
+                {"name": "Computer accessories"},
+                {"name": "Video games and console"},
+                {"name": "Headphones"}
+            ],
+            "image": "nav-images/electronics.jpg"
+        },
+        {
+            "name": "Fashion",
+            "dropdown": [
+                {"name": "Clothes"},
+                {"name": "Bags"},
+                {"name": "Shoes"},
+                {"name": "Wrist watches"},
+                {"name": "Jeweries"},
+                {"name": "Cloth accessories"}
+            ],
+            "image": "nav-images/fashion.png"
+        },
+        {
+            "name": "Kiddies fashion",
+            "dropdown": [
+                {"name": "Kiddies Clothes"},
+                {"name": "Kiddies Bags"},
+                {"name": "Kiddies Shoes"},
+                {"name": "Kiddies Cloth accessories"},
+                {"name": "Kiddies Wrist watches"},
+                {"name": "Kiddies Jeweries"}
+            ],
+            "image": "nav-images/kiddies-fashion.png"
+        },
+        {
+            "name": "Mobile phones and tablets",
+            "dropdown": [
+                {"name": "Mobile phones"},
+                {"name": "Tablets"},
+                {"name": "Smart watches"},
+                {"name": "Phone accessories"}
+            ],
+            "image": "nav-images/phone.png"
+        },
+        {
+            "name": "Power",
+            "dropdown": [
+                {"name": "Power banks"},
+                {"name": "Inverters"},
+                {"name": "Generators"},
+                {"name": "UPS"},
+                {"name": "Solar Panels"}
+            ],
+            "image": "nav-images/power.jpg"
+        },
+        {
+            "name": "Grocery",
+            "dropdown": [
+                {"name": "Vegetables"},
+                {"name": "Meats"},
+                {"name": "Food ingredients"},
+                {"name": "Milk and beverages"}
+            ],
+            "image": "nav-images/grocery.png"
+        },
+        {
+            "name": "Body care",
+            "dropdown": [
+                {"name": "Body creams"},
+                {"name": "Hair creams"},
+                {"name": "Perfume and body sprays"},
+                {"name": "Kiddies Wrist watches"},
+                {"name": "Make-ups"}
+            ],
+            "image": "nav-images/body-care.png"
+        }
+    ]
+}
