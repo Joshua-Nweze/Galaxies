@@ -14,7 +14,7 @@
                         </div>
                         <div class="col-6">
                             <span>{{item.name}}</span> <br>
-                            <span class="text-danger" @click="removeFromCart(index)"><i class="bi bi-trash"></i> Remove</span>
+                            <span class="text-danger del" @click="removeFromCart(index)"><i class="bi bi-trash"></i> Remove</span>
                         </div>
                         <div class="col-4 text-end">
                             <span>₦ {{item.price * item.qty}}</span> <br>
@@ -119,6 +119,10 @@ onUpdated(() => {
     }
     .product{
         border-bottom: 1px solid #8c68d2;
+    }
+
+    .del:hover{
+        cursor: pointer;
     }
 
     @media only screen and (min-width: 1024px) {

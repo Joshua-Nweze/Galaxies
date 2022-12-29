@@ -22,10 +22,6 @@
         </div>  
     </div>
     </div>
-
-    <div>
-        {{product.name}}
-    </div>
 </template>
 
 <script setup>
@@ -79,6 +75,10 @@ function save (data){
 <style scoped>
     .amount, .qty, .seller-contact, .cart-and-fav{
         font-size: 20px;
+    }
+
+    .qty i:hover{
+        cursor: pointer;
     }
 
     .seller-contact button, .seller-contact button:hover, .add-to-cart, .add-to-cart:hover{

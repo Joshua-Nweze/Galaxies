@@ -60,7 +60,7 @@
         {
             "name": "Grocery",
             "dropdown": [
-                {"name": "Vegetables"},
+                {"name": "Fruits and vegetables"},
                 {"name": "Meats"},
                 {"name": "Food ingredients"},
                 {"name": "Milk and beverages"}

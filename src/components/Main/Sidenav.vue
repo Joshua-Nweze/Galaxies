@@ -4,7 +4,7 @@
             <div class="btn-group dropend d- col-12">
                 <div class="dropdown col-12 d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
                     <img :src="require(`../../assets/imgs/${nav.image}`)" alt="" width="50px" class="img-fluid col-2">
-                    <div class="col-9">{{nav.name}}</div>
+                    <div class="col-9 nav-name">{{nav.name}}</div>
                     <div class="col-1"><i class="bi bi-caret-right-fill"></i></div>
                 </div>
                 <ul class="dropdown-menu sidenav-dropdown">
@@ -25,19 +25,19 @@ let { navItems } = storeToRefs(navItem)
 
 let navList = navItems.value.nav
 
-function showSubSidenav () {
-    let sideNav = document.getElementById('sideNav')
-    let subSideNav = document.getElementById('subSidenav')
+// function showSubSidenav () {
+//     let sideNav = document.getElementById('sideNav')
+//     let subSideNav = document.getElementById('subSidenav')
 
-     subSideNav.style.display = 'block'
-}
+//      subSideNav.style.display = 'block'
+// }
 
-function hideSubSidenav() {
-    let sideNav = document.getElementById('sideNav')
-    let subSideNav = document.getElementById('subSidenav')
+// function hideSubSidenav() {
+//     let sideNav = document.getElementById('sideNav')
+//     let subSideNav = document.getElementById('subSidenav')
 
-     subSideNav.style.display = 'none'
-}
+//      subSideNav.style.display = 'none'
+// }
 </script>
 
 <style  scoped>
@@ -77,5 +77,9 @@ function hideSubSidenav() {
 
     .dropdown-item{
         padding: 15px 5px;
+    }
+
+    .nav-name{
+        padding-left: 7px;
     }
 </style>
