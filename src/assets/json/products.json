@@ -1,0 +1,93 @@
+{
+    "product": [
+        {
+            "name": "12 green Apple",
+            "category": "Fruits and vegetables",
+            "price": 0.99,
+            "description": "A red fruit with a crunchy texture and a sweet taste."
+        },
+        {
+            "name": "8 fingers of Banana",
+            "category": "Fruits and vegetables",
+            "price": 0.59,
+            "description": "A yellow fruit with a soft texture and a sweet taste."
+        },
+        {
+            "name": "6 sweet Orange",
+            "category": "Fruits and vegetables",
+            "price": 0.79,
+            "description": "An orange fruit with a juicy texture and a slightly sour taste."
+        },
+        {
+            "name": "Dell Latitude E6420",
+            "category": "Laptops and computers",
+            "price": 999.99
+        },
+        {
+            "name": "TV",
+            "category": "TV and DVD",
+            "price": 499.99,
+            "description": "A device used for displaying video and audio content."
+        },
+        {
+            "name": "Tablet",
+            "category": "Tablet",
+            "price": 299.99,
+            "description": "A portable device with a touchscreen display and internet connectivity."
+        },
+        {
+            "name": "Smartphone",
+            "category": "Mobile phones",
+            "price": 699.99,
+            "description": "A portable device with a touchscreen display, internet connectivity, and phone capabilities."
+        },
+        {
+            "name": "Laptop",
+            "category": "Laptops and computers",
+            "price": 899.99,
+            "description": "A portable computer with a touchscreen or keyboard and internet connectivity."
+        },
+        {
+            "name": "Smartwatch",
+            "category": "Smart watches",
+            "price": 199.99,
+            "description": "A portable device worn on the wrist that can perform various tasks and has internet connectivity."
+        },
+        {
+            "name": "Headphones",
+            "category": "Phone accessories",
+            "price": 99.99,
+            "description": "A device worn over or in the ears to listen to audio or make phone calls."
+        },
+        {
+            "name": "Speakers",
+            "category": "Computer Accessories",
+            "price": 149.99,
+            "description": "A device used to amplify sound or play audio."
+        },
+        {
+            "name": "Mouse",
+            "category": "Computer Accessories",
+            "price": 29.99,
+            "description": "A device used to control a computer cursor."
+        },
+        {
+            "name": "Keyboard",
+            "category": "Computer Accessories",
+            "price": 49.99,
+            "description": "A device used to input text and data into a computer."
+        },
+        {
+            "name": "Webcam",
+            "category": "Computer Accessories",
+            "price": 39.99,
+            "description": "A device used to capture video and audio for online communication."
+        },
+        {
+            "name": "External Hard Drive",
+            "category": "Computer Accessories",
+            "price": 39.99,
+            "description": "A device used to capture video and audio for online communication."
+        }
+    ]
+}

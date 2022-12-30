@@ -2,7 +2,7 @@
     "nav": [
         {
             "name": "Electronics",
-            "dropdown": [
+            "category": [
                 {"name": "Electronic accessories"},
                 {"name": "TV and DVD"},
                 {"name": "Laptops and Computers"},
@@ -14,7 +14,7 @@
         },
         {
             "name": "Fashion",
-            "dropdown": [
+            "category": [
                 {"name": "Clothes"},
                 {"name": "Bags"},
                 {"name": "Shoes"},
@@ -26,7 +26,7 @@
         },
         {
             "name": "Kiddies fashion",
-            "dropdown": [
+            "category": [
                 {"name": "Kiddies Clothes"},
                 {"name": "Kiddies Bags"},
                 {"name": "Kiddies Shoes"},
@@ -38,7 +38,7 @@
         },
         {
             "name": "Mobile phones and tablets",
-            "dropdown": [
+            "category": [
                 {"name": "Mobile phones"},
                 {"name": "Tablets"},
                 {"name": "Smart watches"},
@@ -48,7 +48,7 @@
         },
         {
             "name": "Power",
-            "dropdown": [
+            "category": [
                 {"name": "Power banks"},
                 {"name": "Inverters"},
                 {"name": "Generators"},
@@ -59,7 +59,7 @@
         },
         {
             "name": "Grocery",
-            "dropdown": [
+            "category": [
                 {"name": "Fruits and vegetables"},
                 {"name": "Meats"},
                 {"name": "Food ingredients"},
@@ -69,7 +69,7 @@
         },
         {
             "name": "Body care",
-            "dropdown": [
+            "category": [
                 {"name": "Body creams"},
                 {"name": "Hair creams"},
                 {"name": "Perfume and body sprays"},

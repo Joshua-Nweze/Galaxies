@@ -8,7 +8,7 @@
                     <div class="col-1"><i class="bi bi-caret-right-fill"></i></div>
                 </div>
                 <ul class="dropdown-menu sidenav-dropdown">
-                    <li class="dropdown-item" v-for="dropdown in nav.dropdown" :key="dropdown.index">{{ dropdown.name}} </li>
+                    <router-link :to="`/products/${nav.name.split(' ').join('-')}/${category.name.split(' ').join('-')}` " class="dropdown-item" @click="getProductCat(category.name)" v-for="category in nav.category" :key="category.index">{{ category.name}} </router-link>
                 </ul>
             </div>
         </div>
@@ -16,14 +16,21 @@
 </template>
 
 <script setup>
-import { useNavItem } from '@/store/useNavItem'
+import { useNavItem } from '@/store/useNavItem' 
 import { storeToRefs } from 'pinia'
+
+let emit = defineEmits(["getProductCat"]) 
 
 let navItem = useNavItem()
 
 let { navItems } = storeToRefs(navItem)
 
 let navList = navItems.value.nav
+
+function getProductCat(data) {
+    console.log(data);
+    emit('getProductCat', data)
+}
 
 // function showSubSidenav () {
 //     let sideNav = document.getElementById('sideNav')

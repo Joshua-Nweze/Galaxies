@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid row">
     <div class="col-lg-3 d-none d-lg-block">
-      <Sidenav />
+      <Sidenav @getProductCat="getProductCat"/>
     </div>
     <div class="col-lg-9 col-md-12 col-sm-12">
-      <Sliders />
+      <Sliders/>
       <TrendingProducts @toProduct="toProduct"/>
       <RecentlyUploaded />
     </div>
@@ -20,9 +20,13 @@ import Sliders from '@/components/Main/Sliders';
 import TrendingProducts from '@/components/Main/TrendingProducts'
 import RecentlyUploaded from '@/components/Main/RecentlyUploaded'
 
-let emit = defineEmits(['toProduct'])
+let emit = defineEmits(['toProduct', 'getProductCat'])
 
 function toProduct(data) {
   emit("toProduct", data);
+}
+
+function getProductCat(data) {
+  emit("getProductCat", data);
 }
 </script>

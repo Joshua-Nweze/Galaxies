@@ -1,6 +1,8 @@
 <template>
   <Nav
    :cart="cart"
+   @getProductCat="getProductCat"
+   :productCat="productCat"
   />
   <router-view
   :key="$route.path"
@@ -10,6 +12,8 @@
    :cart="cart"
    @removeFromCart="removeFromCart"
    @save="save"
+   @getProductCat="getProductCat"
+   :productCat="productCat"
   />
   <Footer />
 </template>
@@ -23,6 +27,7 @@ import { computed, onUpdated } from '@vue/runtime-core';
 let product = ref()
 let cart = reactive([])
 let saved = reactive([])
+let productCat = ref('')
 
 function toProduct(data) {
   product.value = data
@@ -40,6 +45,9 @@ function save(data) {
   saved.push(data)
 }
 
+function getProductCat(data) {
+  productCat.value = data
+}
 </script>
 
 
