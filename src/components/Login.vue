@@ -39,8 +39,6 @@ let pwdErrMsg = ref('')
 function login() {
     textInputValidate(email, emailErrMsg)
     textInputValidate(pwd, pwdErrMsg)
-
-    
 }
 </script>
 

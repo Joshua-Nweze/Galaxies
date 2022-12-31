@@ -1,7 +1,7 @@
 <template>
     <div class="trends-container">
         <div class="trends">
-            <div class="mr-5" v-for="trends in trending" :key="trends.index">
+            <div class="mr-5" v-for="trends in trending.slice(0, 4)" :key="trends.index">
                 <router-link @click="toProduct(trends)" :to="`/product/${trends.name.split(' ').join('-')}`" class="card mt-2 router">
                     <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> -->
                     <img v-if="trends.image" class="card-img-top img-fluid" :src="require(`../../assets/imgs/${trends.image}`)" :alt="trends.name" style="">
@@ -17,11 +17,12 @@
 
 <script setup>
 import { ref } from '@vue/reactivity'
-import trendingProducts from '../../assets/json/trending.json'
+import trendingProducts from '../../assets/json/products.json'
 
 let emit = defineEmits(['toProduct'])
 
-let trending = ref(trendingProducts.trending)
+let trending = ref(trendingProducts.product)
+console.log(trending);
 
 function toProduct(data) {
     emit('toProduct', data)

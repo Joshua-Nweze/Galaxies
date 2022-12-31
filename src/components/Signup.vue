@@ -51,8 +51,6 @@ function createAccount() {
    textInputValidate(name, nameErrMsg)
    emailInputValidate(email, emailErrMsg)
    passwordInputValidate(pwd1, pwd2, pwd1ErrMsg, pwd2ErrMsg)
-
-   console.log(email.value);
 }
 </script>
 

@@ -1,5 +1,17 @@
 <template>
     <div class="container position-relative">
+         <nav aria-label="breadcrumb" class="mt-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <router-link to="/" class="breadcrumb-item router-crumb">Home</router-link>
+                    <li class="breadcrumb-item text-muted">Products</li>
+                    <li class="breadcrumb-item text-muted">{{ productType.split('-').join(' ') }}</li>
+                    <router-link :to="`/products/${productType}/${productCat}`" class="breadcrumb-item router-crumb router" aria-current="page">{{ productCat.split('-').join(' ') }}</router-link>
+                    <li class="breadcrumb-item" aria-current="page">{{ productName.split('-').join(' ') }}</li>
+                </ol>
+            </nav>
+        </nav>
+
         <div class="row justify-content-center align-items-center mt-4">
             <div class="col-lg-5 col-md-5 col-sm-12">
                 <img class="img-fluid" v-if="product.image" :src="require(`../../assets/imgs/${product.image}`)" alt="">
@@ -73,9 +85,9 @@ let qty = ref(1)
 let showAlert = ref(false)
 let alertMessage = ref('')
 // let loggedIn = ref(false)
-let routeParam = ref(route.params.productName)
-
-routeRemoveDash(routeParam)
+let productName = ref(route.params.productName)
+let productType = ref(route.params.productType)
+let productCat = ref(route.params.productCat)
 
 function addToCart(data){
     emit('addToCart', data)
@@ -110,7 +122,7 @@ function save (data){
     // }
 }
 
-retainProduct(routeRemoveDash(routeParam))
+retainProduct(routeRemoveDash(productName))
 
 </script>
 
@@ -140,5 +152,10 @@ retainProduct(routeRemoveDash(routeParam))
         bottom: 10px;
         position: fixed;
         transition: .5s ease-in;
+    }
+
+    .router-crumb{
+        color: #9676d6;
+        text-decoration: none;
     }
 </style>

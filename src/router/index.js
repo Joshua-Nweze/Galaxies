@@ -35,7 +35,7 @@ const routes = [
     }
   },
   {
-    path: '/product/:productName',
+    path: '/product/:productType/:productCat/:productName',
     name: 'product',
     component: () => import(/* webpackChunkName: "product" */ "../views/ProductView"),
     meta: {
@@ -43,9 +43,9 @@ const routes = [
     }
   },
   {
-    path: '/products/:productType/:productCat', 
+    path: '/products/:productType/:productCat',
     name: 'products',
-    component: () => import(/* webpackChunkName: "404" */ "../views/Productsview"),
+    component: () => import(/* webpackChunkName: "products" */ "../views/Productsview"),
     meta: {
       title: 'Products'
     }
@@ -53,9 +53,17 @@ const routes = [
   {
     path: '/coming-soon', 
     name: 'coming-soon',
-    component: () => import(/* webpackChunkName: "404" */ "../components/ComingSoon"),
+    component: () => import(/* webpackChunkName: "coming-soon" */ "../components/ComingSoon"),
     meta: {
       title: 'Coming soon'
+    }
+  },
+  {
+    path: '/search/:query', 
+    name: 'search',
+    component: () => import(/* webpackChunkName: "search" */ "../views/SearchView"),
+    meta: {
+      title: 'Search'
     }
   },
   {

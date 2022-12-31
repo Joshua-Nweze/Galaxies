@@ -1,19 +1,13 @@
 <template>
   <Nav
    :cart="cart"
-   @getProductCat="getProductCat"
-   :productCat="productCat"
   />
   <router-view
   :key="$route.path"
-   @toProduct="toProduct"
-   :product="product"
    @addToCart="addToCart"
    :cart="cart"
    @removeFromCart="removeFromCart"
    @save="save"
-   @getProductCat="getProductCat"
-   :productCat="productCat"
   />
   <Footer />
 </template>
@@ -28,6 +22,7 @@ let product = ref()
 let cart = reactive([])
 let saved = reactive([])
 let productCat = ref('')
+let searchQuery = ref('')
 
 function toProduct(data) {
   product.value = data
@@ -49,6 +44,10 @@ function save(data) {
 
 function getProductCat(data) {
   productCat.value = data
+}
+
+function search(query){
+  searchQuery.value = query
 }
 </script>
 

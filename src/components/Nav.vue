@@ -15,7 +15,7 @@
                         </div>
                         <ul class="dropdown-menu" >
                             <li v-for="category in nav.category" :key="category.index">
-                                <router-link :to="`/products/${nav.name.split(' ').join('-')}/${category.name.split(' ').join('-')}`" class="dropdown-item row d-flex" @click="getProductCat(category.name)">
+                                <router-link :to="`/products/${nav.name.split(' ').join('-')}/${category.name.split(' ').join('-')}`" class="dropdown-item row d-flex" @click="hideNav()">
                                     <div class="col-12 d-down-item">{{ category.name }}</div>
                                 </router-link>
                             </li>
@@ -37,8 +37,9 @@
         </div>
 
         <div class="col-12 d-flex justify-content-start col-lg-5 col-sm-12 order-lg-2 order-3 order-lg-2">
-            <input v-model="searchQuery" @keypress.enter="searchProduct(searchQuery)" id="searchInput" class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search">
-            <div class="btn nav-btn text-muted" id="searchBtn" type="submit" @click="searchProduct(searchQuery)">Search</div>
+            <input v-model="searchQuery" @keypress.enter="searchProduct()" id="searchInput" class="form-control me-2" type="search" placeholder="Search Product" aria-label="Search">
+            <div class="btn nav-btn text-muted" id="searchBtn" type="submit" @click="searchProduct()">Search</div>
+            <!-- <div class="btn nav-btn text-muted" id="searchBtn" type="submit" @click="searchProduct(searchQuery)">Search</div> -->
         </div>
 
         <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-4 order-2 order-lg-3 buttons">
@@ -70,17 +71,18 @@ import { computed, onUpdated, reactive, ref } from '@vue/runtime-core'
 import { useNavItem } from '@/store/useNavItem'
 import { useProducts } from '@/store/products'
 import { storeToRefs } from 'pinia'
+import { useRouter } from 'vue-router'
 
 const props = defineProps(['cart'])
-const emit = defineEmits(['getProductCat', 'search'])
 let navItem = useNavItem()
+let router = useRouter()
 
 let {cart} = props
 let { navItems } = storeToRefs(navItem)
 let productStore = useProducts()
 
 let { products } = storeToRefs(productStore)
-let { search } = productStore
+let { search, getProducts } = productStore
 
 let productsArr = reactive([])
 productsArr.push(products.value.product)
@@ -88,12 +90,7 @@ productsArr.push(products.value.product)
 let navList = navItems.value.nav
 let searchQuery = ref('')
 
-function getProductCat(data) {
-    console.log(data);
-    emit('getProductCat', data)
 
-    hideNav()
-}
 
 let numOfCartItems = computed(() => {
     let qty = []
@@ -114,9 +111,10 @@ function hideNav() {
     document.getElementById('sideNav').style.left = '-1550px'
 }
 
-function searchProduct(query) {
-    if (searchQuery.value) {
-        search(productsArr, query)
+function searchProduct() {
+    if (searchQuery.value !== "") {
+        router.push({ name: 'search', params: { query: searchQuery.value}})
+        searchQuery.value = ''
     }
 }
 

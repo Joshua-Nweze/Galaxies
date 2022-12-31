@@ -1,6 +1,37 @@
 {
     "product": [
         {
+            "name": "Auking mini projector",
+            "category": "Computer Accessories",
+            "type": "Electronics",
+            "price": 125000,
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here, making it look like readable English.",
+            "image": "trending/auking-projector.jpg"
+        },
+        {
+            "name": "iPhone 13 236 ROM",
+            "category": "Mobile phones",
+            "type": "Mobile phones and tablets",
+            "price": 385000,
+            "image": "trending/iphone13.png"
+        },
+        {
+            "name": "Nike Airx",
+            "category": "Shoes",
+            "type": "Fashion",
+            "price": 32000,
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here, making it look like readable English.",
+            "image": "trending/nike-airx.jpeg"
+        },
+        {
+            "name": "1 pack of Bic pen",
+            "category": "Writing pack",
+            "type": "Stationary",
+            "price": 750,
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.",
+            "image": "trending/bic.jpg"
+        },
+        {
             "name": "12 green Apple",
             "category": "Fruits and vegetables",
             "type": "Grocery",

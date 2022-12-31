@@ -77,6 +77,15 @@
                 {"name": "Make-ups"}
             ],
             "image": "nav-images/body-care.png"
+        },
+        {
+            "name": "Stationary",
+            "category": [
+                {"name": "Books"},
+                {"name": "Writing pack"},
+                {"name": "Book accessories"}
+            ],
+            "image": "nav-images/book.jpg"
         }
     ]
 }

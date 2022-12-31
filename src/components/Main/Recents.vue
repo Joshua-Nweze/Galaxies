@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref } from '@vue/reactivity'
-import trendingProducts from '../../assets/json/trending.json'
+import trendingProducts from '../../assets/json/products.json'
 
 let trending = ref(trendingProducts.trending)
 

@@ -4,19 +4,16 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <router-link to="/" class="breadcrumb-item router-crumb">Home</router-link>
-                    <li class="breadcrumb-item text-muted">Products</li>
-                    <li class="breadcrumb-item text-muted">{{ productType.split('-').join(' ') }}</li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ productCat.split('-').join(' ') }}</li>
+                    <li class="breadcrumb-item text-muted">Search</li>
+                    <li class="breadcrumb-item text-muted">{{ query.split('-').join(' ') }}</li>
                 </ol>
             </nav>
         </nav>
 
-        <h3>{{ productCat.split('-').join(' ') }}</h3>
+        <h4>Found {{ product.length }} item(s) containing '{{ query.split('-').join(' ') }}'</h4>
 
-        <router-link 
-            :to="`/product/${item.type.split(' ').join('-')}/${item.category.split(' ').join('-')}/${item.name.split(' ').join('-')}`" class="card mt-2 router" v-for="item in product" :key="item.index"
-        >
-        <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'">
+        <router-link :to="`/product/${item.type.split(' ').join('-')}/${item.category.split(' ').join('-')}/${item.name.split(' ').join('-')}`" class="card mt-2 router" v-for="item in product" :key="item.index">
+        <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> 
         <img class="card-img-top img-fluid" alt="" style=""> -->
             <div class="card-body">
                 <span class="title fw-bold">{{ item.name }}</span> <br>
@@ -26,7 +23,6 @@
         <div v-if="product.length == 0">
             <h5>No available product to show</h5>
         </div>
-        
     </div>
 </template>
 
@@ -44,17 +40,10 @@ let productsStore = useProducts()
 
 let { products, product} = storeToRefs(productsStore)
 let { getProducts, retainProducts, search } = productsStore
-let productsArr = reactive([])
-let productType = ref(route.params.productType)
-let productCat = ref(route.params.productCat)
 
-productsArr.push(products.value.product)
+let query = ref(route.params.query)
 
-
-getProducts(routeRemoveDash(productCat))
-retainProducts(routeRemoveDash(productType), routeRemoveDash(productCat))
-
-
+let item = ref(search(routeRemoveDash(query)))
 </script>
 
 <style scoped>
