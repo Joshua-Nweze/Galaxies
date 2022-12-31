@@ -20,7 +20,7 @@
 
                 <div class="col-lg-12 col-md-12 col-6 col-xs-6 sm-hero text-center pt-4 sm-hero-second">
                     <span class="mt-5 fw-bold">See Premium services</span>
-                    <button type="button" class="btn main-btn text-light mt-2 col-11"><i class="bi bi-gem"></i> Premium Services</button>
+                    <router-link to="/coming-soon" type="button" class="btn main-btn text-light mt-2 col-11"><i class="bi bi-gem"></i> Premium Services</router-link>
                 </div>
             </div>
         </div>

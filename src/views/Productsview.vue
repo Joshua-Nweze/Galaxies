@@ -6,6 +6,7 @@
         <div class="col-lg-9 col-md-12 col-sm-12">
             <Products
              :productCat="productCat"
+             @toProduct="toProduct"
             />
         </div>
     </div>
@@ -16,6 +17,11 @@ import Sidenav from '@/components/Main/Sidenav.vue'
 import Products from '@/components/Products/Products.vue'
 
 let props = defineProps(['productCat'])
+let emit = defineEmits(["toProduct"])
+
+function toProduct(data){
+    emit("toProduct", data)
+}
 </script>
 
 <style scoped>

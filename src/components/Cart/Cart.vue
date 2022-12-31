@@ -8,9 +8,9 @@
                 </div>
 
                 <div v-if="!emptyCart">
-                    <div class="row product mt-4" v-for="(item, index) in cart" :key="item.id">
+                    <div class="row product mt-4" v-for="(item, index) in cart" :key="item.index">
                         <div class="col-2">
-                            <img :src="require(`../../assets/imgs/${item.image}`)" alt="" class="img-fluid">
+                            <img v-if="item.image" :src="require(`../../assets/imgs/${item.image}`)" alt="" class="img-fluid">
                         </div>
                         <div class="col-6">
                             <span>{{item.name}}</span> <br>

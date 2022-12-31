@@ -1,10 +1,10 @@
 <template>
     <div class="trends-container">
         <div class="trends">
-            <div class="mr-5" v-for="trends in trending" :key="trends.id">
-                <router-link @click="toProduct(trends)" :to="'/product/' + trends.name.split(' ').join('-') + '-' + trends.id" class="card mt-2 router">
+            <div class="mr-5" v-for="trends in trending" :key="trends.index">
+                <router-link @click="toProduct(trends)" :to="`/product/${trends.name.split(' ').join('-')}`" class="card mt-2 router">
                     <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> -->
-                    <img v-if="trends.image" class="card-img-top img-fluid" :src="require(`../../assets/imgs/${trends.image}`)" alt="trends.name" style="">
+                    <img v-if="trends.image" class="card-img-top img-fluid" :src="require(`../../assets/imgs/${trends.image}`)" :alt="trends.name" style="">
                     <div class="card-body">
                         <span class="title fw-bold">{{trends.name}}</span> <br>
                         <span class="amount fw-bold">₦{{trends.price}}</span>

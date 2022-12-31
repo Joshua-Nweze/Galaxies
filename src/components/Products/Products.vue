@@ -5,26 +5,25 @@
                 <ol class="breadcrumb">
                     <router-link to="/" class="breadcrumb-item router-crumb router">Home</router-link>
                     <li class="breadcrumb-item text-muted">Products</li>
-                    <li class="breadcrumb-item text-muted">{{$route.params.productCategory}}</li>
-                    <li class="breadcrumb-item active" aria-current="page">{{ props.productCat }}</li>
+                    <li class="breadcrumb-item text-muted">{{ productType.split('-').join(' ') }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ productCat.split('-').join(' ') }}</li>
                 </ol>
             </nav>
         </nav>
 
-        <h4>{{ props.productCat }}</h4>
-            <!-- <div class=""> -->
-            <div  class="card mt-2 router" v-for="b in product" :key="b.index">
-            <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> 
-            <img class="card-img-top img-fluid" alt="" style=""> -->
-            <div class="card-body" v-if="product.length" >
-                <span class="title fw-bold">{{ b.name }}</span> <br>
-                <span class="amount fw-bold">₦</span>
+        <h4>{{ productCat.split('-').join(' ') }}</h4>
+
+        <router-link @click="toProduct(item)" :to="`/product/${item.name.split(' ').join('-')}`" class="card mt-2 router" v-for="item in product" :key="item.index">
+        <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> 
+        <img class="card-img-top img-fluid" alt="" style=""> -->
+            <div class="card-body">
+                <span class="title fw-bold">{{ item.name }}</span> <br>
+                <span class="amount fw-bold">₦{{ item.price }}</span>
             </div>
-            <div v-else class="noProducts">
-                No available product to show
-            </div>
-            </div>
-        <!-- </div> -->
+        </router-link>
+        <div v-if="product.length == 0" class="noProducts">
+            No available product to show
+        </div>
         
     </div>
 </template>.
@@ -33,34 +32,44 @@
 import { useProducts } from '@/store/products'
 import { reactive, ref } from '@vue/reactivity'
 import { mapActions, storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router'
+import { routeEdit } from '@/composables/routeEdit'
 
 let props = defineProps(["productCat"])
-
-console.log(props.searchQuery);
+let emit = defineEmits(["toProduct"])
+let route = useRoute()
+let { routeRemoveDash } = routeEdit()
 
 let productsStore = useProducts()
 
 let { products, product} = storeToRefs(productsStore)
-let { getProducts } = productsStore
+let { getProducts, retainProducts } = productsStore
 // let {ina} = mapActions(useProducts, ['ina'])
 let productsArr = reactive([])
+let productType = ref(route.params.productType)
+let productCat = ref(route.params.productCat)
 
-// if (product) {
-    // console.log(Object.keys(product).length);
-// }
+console.log(productType.value, productCat.value);
 
 productsArr.push(products.value.product)
 
 getProducts(productsArr, props.productCat)
-// search(productsArr, 'tv')
+retainProducts(routeRemoveDash(productType), routeRemoveDash(productCat))
 
-// console.log(product.value);
+function toProduct(data){
+    console.log(data);
+    emit("toProduct", data)
+}
 
 </script>
 
 <style scoped>
     .router-crumb{
         color: #502d95;
+    }
+
+    .router{
+        color: #2c3e50;
     }
 
     .noProducts{

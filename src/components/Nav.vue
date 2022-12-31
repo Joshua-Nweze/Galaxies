@@ -8,7 +8,7 @@
             <div v-for="nav in navList" :key="nav.index">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <div class="nav-link dropdown row d-flex" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="nav-link dropdown row d-flex align-items-center" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="col-2"><img :src="require(`../assets/imgs/${nav.image}`)" alt="" class="img-fluid"></div>
                             <div class="col-8">{{nav.name}}</div>
                             <div class="col-2"><i class="bi bi-caret-down-fill"></i></div>

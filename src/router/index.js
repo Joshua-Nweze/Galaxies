@@ -43,11 +43,19 @@ const routes = [
     }
   },
   {
-    path: '/products/:productType/:categoryName', 
+    path: '/products/:productType/:productCat', 
     name: 'products',
     component: () => import(/* webpackChunkName: "404" */ "../views/Productsview"),
     meta: {
       title: 'Products'
+    }
+  },
+  {
+    path: '/coming-soon', 
+    name: 'coming-soon',
+    component: () => import(/* webpackChunkName: "404" */ "../components/ComingSoon"),
+    meta: {
+      title: 'Coming soon'
     }
   },
   {

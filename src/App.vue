@@ -43,6 +43,8 @@ function removeFromCart(index) {
 
 function save(data) {
   saved.push(data)
+
+  console.log(saved);
 }
 
 function getProductCat(data) {
