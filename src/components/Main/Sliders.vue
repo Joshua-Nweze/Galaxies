@@ -15,7 +15,7 @@
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sm-hero-container">
                 <div class="col-lg-12 col-md-12 col-6 col-xs-6 sm-hero text-center pt-4">
                     <span class="mt-5 fw-bold">Wanna sell something?</span> <br>
-                    <button type="button" class="btn main-btn text-light mt-2 col-11"><i class="bi bi-bag-plus"></i> Sell a product</button>
+                    <button type="button" class="btn main-btn text-light mt-2 col-11" data-bs-toggle="modal" data-bs-target="#sellProduct"><i class="bi bi-bag-plus"></i> Sell a product</button>
                 </div>
 
                 <div class="col-lg-12 col-md-12 col-6 col-xs-6 sm-hero text-center pt-4 sm-hero-second">
@@ -24,6 +24,26 @@
                 </div>
             </div>
         </div>
+
+        <!-- Sell Product Modal -->
+        <div class="modal fade" id="sellProduct" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Wanna sell somthing?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                Login or Signup to continue
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <router-link to="/login" type="button" class="btn btn-secondary" >Login</router-link>
+                <router-link to="/signup" type="button" class="btn main-btn" >Signup</router-link>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- Modal ends -->
     </div>
 </template>
 
@@ -54,6 +74,7 @@
 
     .main-btn{
         background: #3d2272;
+        color: ghostwhite;
     }
 
      @media only screen and (max-width: 480px) {

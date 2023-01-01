@@ -69,6 +69,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { useProducts } from '@/store/products'
 import { storeToRefs } from 'pinia';
 import { routeEdit } from '@/composables/routeEdit'
+import { onMounted } from '@vue/runtime-core';
 
 const props = defineProps(['product'])
 const emit = defineEmits(['addToCart', 'save'])

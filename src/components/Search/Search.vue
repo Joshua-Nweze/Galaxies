@@ -10,11 +10,10 @@
             </nav>
         </nav>
 
-        <h4>Found {{ product.length }} item(s) containing '{{ query.split('-').join(' ') }}'</h4>
+        <h4>Found {{ product.length }} product(s) containing '{{ query.split('-').join(' ') }}'</h4>
 
         <router-link :to="`/product/${item.type.split(' ').join('-')}/${item.category.split(' ').join('-')}/${item.name.split(' ').join('-')}`" class="card mt-2 router" v-for="item in product" :key="item.index">
-        <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> 
-        <img class="card-img-top img-fluid" alt="" style=""> -->
+        <img  class="card-img-top" :src="require(`../../assets/imgs/${item.image}`)">
             <div class="card-body">
                 <span class="title fw-bold">{{ item.name }}</span> <br>
                 <span class="amount fw-bold">₦{{ item.price }}</span>
@@ -32,6 +31,7 @@ import { reactive, ref } from '@vue/reactivity'
 import { mapActions, storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
 import { routeEdit } from '@/composables/routeEdit'
+// import 404 from '@/components/404'
 
 let route = useRoute()
 let { routeRemoveDash } = routeEdit()
