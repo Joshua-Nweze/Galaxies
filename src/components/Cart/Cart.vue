@@ -63,13 +63,9 @@ const {cart}  = props
 let emptyCart = ref()
 let numOfCartItems = ref(0)
 
-console.log(cart);
-
 let total = computed(() => {
     return cart.reduce((subTotal, item) => subTotal + item.qty * item.price, 0)
 })
-
-console.log(total.value);
 
 function removeFromCart(index) {
     emit('removeFromCart', index)

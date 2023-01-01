@@ -1,14 +1,14 @@
 <template>
     <div class="recents-container">
         <div class="recents">
-            <div class="mr-5" v-for="trends in trending" :key="trends.id">
-                <div class="card mt-2">
-                    <img  class="card-img-top" :src="require(`../../assets/imgs/${trends.image}`)">
+            <div class="mr-5" v-for="recent in recents.slice(0, 4)" :key="recent.id">
+                <router-link :to="`/product/${recent.type.split(' ').join('-')}/${recent.category.split(' ').join('-')}/${recent.name.split(' ').join('-')}`" class="card mt-2 router">
+                    <img  class="card-img-top" :src="require(`../../assets/imgs/${recent.image}`)">
                     <div class="card-body">
-                        <span class="title fw-bold">{{trends.name}}</span> <br>
-                        <span class="amount fw-bold">₦{{trends.price}}</span>
+                        <span class="title fw-bold">{{recent.name}}</span> <br>
+                        <span class="amount fw-bold">₦{{recent.price}}</span>
                     </div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>
@@ -16,9 +16,9 @@
 
 <script setup>
 import { ref } from '@vue/reactivity'
-import trendingProducts from '../../assets/json/products.json'
+import recentProducts from '../../assets/json/products.json'
 
-let trending = ref(trendingProducts.trending)
+let recents = ref(recentProducts.product)
 
 </script>
 
@@ -34,8 +34,10 @@ let trending = ref(trendingProducts.trending)
         display: flex;
         margin: 10px;
     }
+
     .title{
         font-size: 16px;
+        color: #2c3e50;
     }
 
     .amount{
@@ -51,10 +53,11 @@ let trending = ref(trendingProducts.trending)
         .card{
             width: 7rem;
             height: 9rem;
-            margin-right: 10px
+            margin-right: 10px;
+            margin-bottom: 15px;
         }
         .card img{
-            height: 50px
+            height: 70px
         }
     }
 

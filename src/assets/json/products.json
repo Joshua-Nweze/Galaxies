@@ -6,14 +6,14 @@
             "type": "Electronics",
             "price": 125000,
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here, making it look like readable English.",
-            "image": "trending/auking-projector.jpg"
+            "image": "product-images/auking-projector.jpg"
         },
         {
             "name": "iPhone 13 236 ROM",
             "category": "Mobile phones",
             "type": "Mobile phones and tablets",
             "price": 385000,
-            "image": "trending/iphone13.png"
+            "image": "product-images/iphone13.png"
         },
         {
             "name": "Nike Airx",
@@ -21,7 +21,7 @@
             "type": "Fashion",
             "price": 32000,
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here, making it look like readable English.",
-            "image": "trending/nike-airx.jpeg"
+            "image": "product-images/nike-airx.jpeg"
         },
         {
             "name": "1 pack of Bic pen",
@@ -29,111 +29,126 @@
             "type": "Stationary",
             "price": 750,
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.",
-            "image": "trending/bic.jpg"
+            "image": "product-images/bic.jpg"
         },
         {
             "name": "12 green Apple",
             "category": "Fruits and vegetables",
             "type": "Grocery",
             "price": 850,
-            "description": "A red fruit with a crunchy texture and a sweet taste."
+            "description": "A red fruit with a crunchy texture and a sweet taste.",
+            "image": "product-images/apple.jpg"
         },
         {
             "name": "8 fingers of Banana",
             "category": "Fruits and vegetables",
             "type": "Grocery",
             "price": 400,
-            "description": "A yellow fruit with a soft texture and a sweet taste."
+            "description": "A yellow fruit with a soft texture and a sweet taste.",
+            "image": "product-images/banana.png"
         },
         {
             "name": "6 sweet Orange",
             "category": "Fruits and vegetables",
             "type": "Grocery",
             "price": 260,
-            "description": "An orange fruit with a juicy texture and a slightly sour taste."
+            "description": "An orange fruit with a juicy texture and a slightly sour taste.",
+            "image": "product-images/orange.jpg"
         },
         {
-            "name": "Dell Latitude E6420",
+            "name": "Dell Latitude E6420 (4Gb 500Gb)",
             "category": "Laptops and computers",
             "type": "Electronics",
-            "price": 999
+            "price": 96000,
+            "image": "product-images/dell-lat-e6420.jpg"
         },
         {
-            "name": "TV",
+            "name": "32' LG TV",
             "category": "TV and DVD",
             "type": "Electronics",
-            "price": 499,
-            "description": "A device used for displaying video and audio content."
+            "price": 86000,
+            "description": "A device used for displaying video and audio content.",
+            "image": "product-images/lgtv.png"
         },
         {
-            "name": "Tablet",
+            "name": "Samsung Tab S6 lite",
             "category": "Tablets",
             "type": "Mobile phones and tablets",
-            "price": 299,
-            "description": "A portable device with a touchscreen display and internet connectivity."
+            "price": 105000,
+            "description": "A portable device with a touchscreen display and internet connectivity.",
+            "image": "product-images/tabs6lite.jpg"
         },
         {
-            "name": "Smartphone",
+            "name": "Samsung Galaxy A31 6.4 Inches (4GB RAM And 64GB, 20MP + 8MP + 5MP + 5MP Rear Camera, and 16MP Selfie Camera) Andriod 10, 4G LTE ",
             "category": "Mobile phones",
             "type": "Mobile phones and tablets",
-            "price": 699,
-            "description": "A portable device with a touchscreen display, internet connectivity, and phone capabilities."
+            "price": 101000,
+            "description": "A portable device with a touchscreen display, internet connectivity, and phone capabilities.",
+            "image": "product-images/Samsung-Galaxy-A31.jpg"
         },
         {
-            "name": "Laptop",
+            "name": "Macbook Pro 1",
             "category": "Laptops and computers",
             "type": "Electronics",
-            "price": 899,
-            "description": "A portable computer with a touchscreen or keyboard and internet connectivity."
+            "price": 700000,
+            "description": "A portable computer with a touchscreen or keyboard and internet connectivity.",
+            "image": "product-images/apple-macbook-pro-1.jpg"
         },
         {
-            "name": "Smartwatch",
+            "name": "iWatch",
             "category": "Smart watches",
             "type":"Mobile phones and tablets",
-            "price": 199,
-            "description": "A portable device worn on the wrist that can perform various tasks and has internet connectivity."
+            "price": 135500,
+            "description": "A portable device worn on the wrist that can perform various tasks and has internet connectivity.",
+            "image": "product-images/iwatch.jpg"
         },
         {
             "name": "Air Pod2",
             "category": "Phone accessories",
             "type": "Mobile phones and tablets",
-            "price": 99,
-            "description": "A device worn over or in the ears to listen to audio or make phone calls."
+            "price": 19000,
+            "description": "A device worn over or in the ears to listen to audio or make phone calls.",
+            "image": "product-images/airpod.jpg"
         },
         {
-            "name": "Speakers",
+            "name": "Yahama Ns-wa Speakers",
             "category": "Computer accessories",
             "type": "Electronics",
-            "price": 149,
-            "description": "A device used to amplify sound or play audio."
+            "price": 149000,
+            "description": "A device used to amplify sound or play audio.",
+            "image": "product-images/speaker.png"
         },
         {
-            "name": "Mouse",
+            "name": "Logtech Mouse",
             "category": "Computer Accessories",
             "type": "Electronics",
-            "price": 29,
-            "description": "A device used to control a computer cursor."
+            "price": 400,
+            "description": "A device used to control a computer cursor.",
+            "image": "product-images/mouse.jpg"
         },
         {
-            "name": "Keyboard",
+            "name": "Das Keyboard",
             "category": "Computer Accessories",
             "type": "Electronics",
-            "price": 49,
-            "description": "A device used to input text and data into a computer."
+            "price": 750,
+            "description": "A device used to input text and data into a computer.",
+            "image": "product-images/keyboard.png"
         },
         {
-            "name": "Webcam",
+            "name": "Asus C3 Webcam",
             "category": "Computer Accessories",
             "type": "Electronics",
-            "price": 39,
-            "description": "A device used to capture video and audio for online communication."
+            "price": 3900,
+            "description": "A device used to capture video and audio for online communication.",
+            "image": "product-images/webcam.png"
         },
         {
-            "name": "External Hard Drive",
+            "name": "Seagate External Hard Drive (1Tb)",
             "category": "Computer Accessories",
             "type": "Electronics",
-            "price": 39,
-            "description": "A device used to capture video and audio for online communication."
+            "price": 32000,
+            "description": "A device used to capture video and audio for online communication.",
+            "image": "product-images/HHD.jpg"
         }
     ]
 }

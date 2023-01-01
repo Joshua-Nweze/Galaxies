@@ -16,8 +16,7 @@
         <router-link 
             :to="`/product/${item.type.split(' ').join('-')}/${item.category.split(' ').join('-')}/${item.name.split(' ').join('-')}`" class="card mt-2 router" v-for="item in product" :key="item.index"
         >
-        <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'">
-        <img class="card-img-top img-fluid" alt="" style=""> -->
+        <img  class="card-img-top" :src="require(`../../assets/imgs/${item.image}`)">
             <div class="card-body">
                 <span class="title fw-bold">{{ item.name }}</span> <br>
                 <span class="amount fw-bold">₦{{ item.price }}</span>
@@ -68,13 +67,14 @@ retainProducts(routeRemoveDash(productType), routeRemoveDash(productCat))
     }
 
     @media only screen and (max-width: 480px) {
-        .card{
+         .card{
             width: 7rem;
             height: 9rem;
-            margin-right: 10px
+            margin-right: 10px;
+            margin-bottom: 15px;
         }
         .card img{
-            height: 50px
+            height: 70px
         }
         .card-body{
             padding: 0;

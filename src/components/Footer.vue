@@ -5,19 +5,19 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>About Galaxies</h4>
                     <ul>
-                        <li><i class="bi bi-chevron-right"></i> About us</li>
-                        <li><i class="bi bi-chevron-right"></i> Terms and Condition</li>
-                        <li><i class="bi bi-chevron-right"></i> Privacy Policy</li>
-                        <li><i class="bi bi-chevron-right"></i> Career</li>
-                        <li><i class="bi bi-chevron-right"></i> Return Policy</li>
-                        <li><i class="bi bi-chevron-right"></i> Premium Services</li>
+                        <li> About us</li>
+                        <li> Terms and Condition</li>
+                        <li> Privacy Policy</li>
+                        <li> Career</li>
+                        <li> Return Policy</li>
+                        <li> Premium Services</li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>Support</h4>
                     <ul>
-                        <li><i class="bi bi-chevron-right"></i> Safety tips</li>
-                        <li><i class="bi bi-chevron-right"></i> Contact</li>
+                        <li> Safety tips</li>
+                        <li> Contact</li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 socials">

@@ -2,7 +2,7 @@
     <div class="trends-container">
         <div class="trends">
             <div class="mr-5" v-for="trends in trending.slice(0, 4)" :key="trends.index">
-                <router-link @click="toProduct(trends)" :to="`/product/${trends.name.split(' ').join('-')}`" class="card mt-2 router">
+                <router-link :to="`/product/${trends.type.split(' ').join('-')}/${trends.category.split(' ').join('-')}/${trends.name.split(' ').join('-')}`" class="card mt-2 router">
                     <!-- <img  class="card-img-top" :src="trends.image" :alt="trends.name + ' image'"> -->
                     <img v-if="trends.image" class="card-img-top img-fluid" :src="require(`../../assets/imgs/${trends.image}`)" :alt="trends.name" style="">
                     <div class="card-body">
@@ -19,14 +19,8 @@
 import { ref } from '@vue/reactivity'
 import trendingProducts from '../../assets/json/products.json'
 
-let emit = defineEmits(['toProduct'])
-
 let trending = ref(trendingProducts.product)
-console.log(trending);
 
-function toProduct(data) {
-    emit('toProduct', data)
-}
 </script>
 
 <style scoped>
@@ -59,10 +53,11 @@ function toProduct(data) {
         .card{
             width: 7rem;
             height: 9rem;
-            margin-right: 10px
+            margin-right: 10px;
+            margin-bottom: 15px;
         }
         .card img{
-            height: 50px
+            height: 70px
         }
     }
 
