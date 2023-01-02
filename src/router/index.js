@@ -86,12 +86,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title}`
   next()
 })
+
 
 export default router

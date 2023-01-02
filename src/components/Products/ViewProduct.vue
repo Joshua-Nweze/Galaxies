@@ -33,8 +33,8 @@
         </div>
 
         <!-- Success alert -->
-        <div class="d-flex justify-content-end row" v-if="showAlert">
-            <div class="col-lg-4 col-md-5 col-sm-10 alert alert-success alert-dismissible fade show" role="alert">
+        <div class="row d-flex justify-content-end" v-if="showAlert">
+            <div class="col-lg-4 col-md-5 col-sm-8 alert alert-success alert-dismissible fade show" role="alert">
                 {{ alertMessage }}
                 <button type="button" class="btn-close" @click="closeAlert" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>  
@@ -159,4 +159,13 @@ retainProduct(routeRemoveDash(productName))
         color: #9676d6;
         text-decoration: none;
     }
+
+    @media only screen and (max-width: 480px) {
+        .alert{
+            width: 300px;
+            margin-right: 10px;
+        }
+    }
+
+    
 </style>

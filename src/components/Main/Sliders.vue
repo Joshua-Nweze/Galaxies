@@ -37,8 +37,8 @@
                 Login or Signup to continue
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <router-link to="/login" type="button" class="btn btn-secondary" >Login</router-link>
-                <router-link to="/signup" type="button" class="btn main-btn" >Signup</router-link>
+                <div @click="auth('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
+                <div @click="auth('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
             </div>
             </div>
         </div>
@@ -48,6 +48,16 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+
+let router = useRouter()
+
+function auth(path) {
+    setTimeout(() => {
+        router.push(path)
+    }, 100)
+}
 
 </script>
 
