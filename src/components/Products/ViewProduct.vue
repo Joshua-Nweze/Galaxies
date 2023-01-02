@@ -22,7 +22,7 @@
                 <div class="amount">₦ {{product.price}}</div>
                 <div class="qty mt-3">Quantity <i class="bi bi-dash-circle" @click="decreaseQty"></i> {{qty}} <i class="bi bi-plus-circle" @click="increaseQty"></i></div>
                 <div class="desc mt-2" v-if="product.description">{{product.description}}</div>
-                <div class="seller-contact mt-3"><button class="btn">Seller contact</button></div>
+                <div class="seller-contact mt-3"><button class="btn" data-bs-toggle="modal" data-bs-target="#sellerContact">Seller contact</button></div>
                 <div class="cart-and-fav mt-3">
                     <button class="btn add-to-cart" @click="addToCart(product)">Add to cart</button>
                     <span class="add-to-fav ml-3" data-bs-toggle="modal" data-bs-target="#saveModal" id="save">
@@ -41,7 +41,7 @@
         </div>
         <!-- Success alert ends -->
 
-    <!-- Modal -->
+    <!-- Save Modal -->
         <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -58,7 +58,26 @@
             </div>
         </div>
         </div>
+        <!-- Modal ends -->
 
+        <!-- Sell Product Modal -->
+        <div class="modal fade" id="sellerContact" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Seller contact</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                Login or Signup to continue
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <div @click="auth('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
+                <div @click="auth('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
+            </div>
+            </div>
+        </div>
+        </div>
         <!-- Modal ends -->
     </div>
 </template>
@@ -123,6 +142,12 @@ function save (data){
     // }
 }
 
+function auth(path) {
+    setTimeout(() => {
+        router.push(path)
+    }, 100)
+}
+
 retainProduct(routeRemoveDash(productName))
 
 </script>
@@ -158,6 +183,11 @@ retainProduct(routeRemoveDash(productName))
     .router-crumb{
         color: #9676d6;
         text-decoration: none;
+    }
+
+    .main-btn{
+        background: #3d2272;
+        color: ghostwhite;
     }
 
     @media only screen and (max-width: 480px) {
