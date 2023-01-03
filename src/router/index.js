@@ -67,6 +67,14 @@ const routes = [
     }
   },
   {
+    path: '/dummy', 
+    name: 'search',
+    component: () => import(/* webpackChunkName: "search" */ "../components/Dummy"),
+    meta: {
+      title: 'Dummy'
+    }
+  },
+  {
     path: '/:pathMatch(.*)*', 
     name: '404',
     component: () => import(/* webpackChunkName: "404" */ "../components/404"),

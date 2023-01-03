@@ -9,7 +9,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <div class="nav-link dropdown row d-flex align-items-center" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="col-2"><img :src="require(`../assets/imgs/${nav.image}`)" alt="" class="img-fluid"></div>
+                            <div class="col-2"><img :src="require(`../assets/imgs/${nav.image}`)" alt="" class="img-fluid nav-img" height="100px"></div>
                             <div class="col-8">{{nav.name}}</div>
                             <div class="col-2"><i class="bi bi-caret-down-fill"></i></div>
                         </div>
@@ -179,6 +179,10 @@ function searchProduct() {
      @media only screen and (min-width: 481px) and (max-width: 1023px) {
         .buttons{
             display: inline;
+        }
+
+        .nav-img{
+            height: 40px;
         }
      }
 </style>

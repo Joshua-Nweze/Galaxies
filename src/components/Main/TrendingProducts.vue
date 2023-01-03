@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-5">
+    <div class="mt-5" id="trends">
         <span class="trend fw-bold"><i class="bi bi-fire"></i>Trending </span>
         <Trends @toProduct="toProduct"/>
     </div>

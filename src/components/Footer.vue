@@ -5,19 +5,19 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>About Galaxies</h4>
                     <ul>
-                        <li> About us</li>
-                        <li> Terms and Condition</li>
-                        <li> Privacy Policy</li>
-                        <li> Career</li>
-                        <li> Return Policy</li>
-                        <li> Premium Services</li>
+                        <li><router-link to="/dummy" class="router"> About us</router-link></li>
+                        <li><router-link to="/dummy" class="router">  Terms and Condition</router-link></li>
+                        <li><router-link to="/dummy" class="router">  Privacy Policy</router-link> </li>
+                        <li><router-link to="/dummy" class="router">  Career</router-link> </li>
+                        <li><router-link to="/dummy" class="router">  Return Policy</router-link></li> 
+                        <li><router-link to="/dummy" class="router">  Premium Services</router-link> </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <h4>Support</h4>
                     <ul>
-                        <li> Safety tips</li>
-                        <li> Contact</li>
+                        <li><router-link to="/dummy" class="router">  Safety tips</router-link> </li>
+                        <li><router-link to="/dummy" class="router">  Contact</router-link> </li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 socials">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="copyright text-center">
-            &copy;  {{ new Date().getFullYear() }} Galaxies. Desiged and built by <a href="https://joshuanweze.netlify.app/">Joshua Nweze</a>
+            &copy;  {{ new Date().getFullYear() }} Galaxies. Desiged and built by <a href="https://joshuanweze.netlify.app/" target="_blank">Joshua Nweze</a>
         </div>
     </footer>
 </template>
@@ -62,6 +62,10 @@
     .copyright{
         background: #3d2272;
         padding: 5px 0;
+    }
+
+    .router{
+        color: ghostwhite;
     }
 
     @media only screen and (max-width: 767px) {

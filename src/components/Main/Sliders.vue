@@ -7,7 +7,7 @@
                     <span class="fs-2 fw-bolder">Galaxies</span> <br>
                     <span class="fs-5">The online marketplace you can trust </span><br>
 
-                    <button type="button" class="btn main-btn text-light mt-3">Learn more</button>
+                    <a href="#trends"><button type="button" class="btn main-btn text-light mt-3 position-absolute" style="z-index: 99">See Products</button></a>
                 </div>
                 <img class="position-absolute handz" src="../../assets/imgs/handz/thumbs-up.png" alt="" width="500px">
             </div>
