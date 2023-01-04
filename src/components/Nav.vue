@@ -43,11 +43,19 @@
         </div>
 
         <div class="col-8 d-flex justify-content-end col-lg-3 col-md-8 col-sm-4 order-2 order-lg-3 buttons">
-            <div class="dropdown">
+            <div class="dropdown" v-if="!isLoggedIn">
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">Sign up / Login</span> </button>
                 <ul class="dropdown-menu">
                     <li><router-link to="/login" class="dropdown-item" href="#">Log In</router-link></li>
                     <li><router-link to="/signup" class="dropdown-item" href="#">Signup</router-link></li>
+                </ul>
+            </div>
+            <div class="dropdown" v-if="isLoggedIn">
+                <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">My Account</span> </button>
+                <ul class="dropdown-menu">
+                    <li><router-link to="/login" class="dropdown-item" href="#">Profile</router-link></li>
+                    <li><router-link to="/signup" class="dropdown-item" href="#">Saved</router-link></li>
+                    <li @click="logoutUser" class="dropdown-item" href="#">Logout</li>
                 </ul>
             </div>
 
@@ -70,11 +78,13 @@
 import { computed, onUpdated, reactive, ref } from '@vue/runtime-core'
 import { useNavItem } from '@/store/useNavItem'
 import { useProducts } from '@/store/products'
+import { useAuth } from '@/store/auth'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 
 const props = defineProps(['cart'])
 let navItem = useNavItem()
+let auth = useAuth()
 let router = useRouter()
 
 let {cart} = props
@@ -84,6 +94,8 @@ let productStore = useProducts()
 let { products } = storeToRefs(productStore)
 let { search, getProducts } = productStore
 
+let { isLoggedIn } = storeToRefs(auth);
+let { logoutUser } = auth
 let productsArr = reactive([])
 productsArr.push(products.value.product)
 

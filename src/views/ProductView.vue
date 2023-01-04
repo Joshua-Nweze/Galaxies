@@ -3,7 +3,6 @@
         <ViewProduct
          :product="product"
          @addToCart="addToCart"
-         @save="save"
         />
     </div>
 </template>
@@ -16,10 +15,6 @@ const emit = defineEmits(['addToCart', 'save'])
 
 function addToCart(data) {
     emit('addToCart', data)
-}
-
-function save(data) {
-    emit('save', data)
 }
 </script>
 

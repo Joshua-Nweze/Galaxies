@@ -72,8 +72,8 @@
                 Login or Signup to continue
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <div @click="auth('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
-                <div @click="auth('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
+                <div @click="to('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
+                <div @click="to('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
             </div>
             </div>
         </div>
@@ -87,6 +87,7 @@ import { reactive, ref } from '@vue/reactivity';
 import { useRoute, useRouter } from 'vue-router';
 import { useProducts } from '@/store/products'
 import { storeToRefs } from 'pinia';
+import { useAuth } from '@/store/auth'
 import { routeEdit } from '@/composables/routeEdit'
 import { onMounted } from '@vue/runtime-core';
 
@@ -96,10 +97,12 @@ let router = useRouter()
 let route = useRoute()
 let productsStore = useProducts()
 let { routeRemoveDash } = routeEdit()
+let auth = useAuth()
 
 let { products, product } = storeToRefs(productsStore)
 let { retainProduct } = productsStore
-
+let { saved } = storeToRefs(auth)
+let { addToSaved } = auth
 
 let qty = ref(1)
 let showAlert = ref(false)
@@ -131,18 +134,14 @@ function increaseQty() {
 }
 
 
-function save (data){
-    // if (!loggedIn) {
-    //     showAlert.value = true
-    //     alertMessage.value = "Login to save products"
-    // } else if(loggedIn){
-        emit('save', data)
-        showAlert.value = true
-        alertMessage.value = "Product added to saved items"
-    // }
+function save(product){
+    showAlert.value = true
+    alertMessage.value = "Product added to saved items"
+
+    addToSaved(product)
 }
 
-function auth(path) {
+function to(path) {
     setTimeout(() => {
         router.push(path)
     }, 100)
