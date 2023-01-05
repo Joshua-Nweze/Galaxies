@@ -192,7 +192,7 @@ retainProduct(routeRemoveDash(productName))
     @media only screen and (max-width: 480px) {
         .alert{
             width: 300px;
-            margin-right: 10px;
+            margin-left: 10px;
         }
     }
 

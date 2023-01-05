@@ -75,6 +75,14 @@ const routes = [
     }
   },
   {
+    path: '/saved',
+    name: 'saved',
+    component: () => import(/* webpackChunkName: "search" */ "../views/SavedView"),
+    meta: {
+      title: 'Saved'
+    }
+  },
+  {
     path: '/:pathMatch(.*)*', 
     name: '404',
     component: () => import(/* webpackChunkName: "404" */ "../components/404"),

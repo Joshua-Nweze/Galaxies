@@ -22,7 +22,6 @@
                             <span>Quantity: {{item.qty}}</span>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
@@ -121,9 +120,8 @@ onUpdated(() => {
         cursor: pointer;
     }
 
-    @media only screen and (min-width: 1024px) {
-        img{
-            height: 50px;
-        }
+    img{
+        height: 50px;
+        margin-bottom: 5px;
     }
 </style>

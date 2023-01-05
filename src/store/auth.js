@@ -16,9 +16,11 @@ export const useAuth = defineStore("auth", {
         },
 
         addToSaved(product){
-            this.saved.push(product)
+            this.saved.unshift(product)
+        },
 
-            console.log(this.saved, this.product);
+        delSavedItem(index){
+            this.saved.splice(index, 1)
         }
     }
 })

@@ -54,7 +54,7 @@
                 <button type="button" class="buttons btn nav-btn text-muted d-inline" data-bs-toggle="dropdown"><i class="bi bi-person buttons"></i> <span class="d-none d-sm-inline">My Account</span> </button>
                 <ul class="dropdown-menu">
                     <li><router-link to="/login" class="dropdown-item" href="#">Profile</router-link></li>
-                    <li><router-link to="/signup" class="dropdown-item" href="#">Saved</router-link></li>
+                    <li><router-link to="/saved" class="dropdown-item" href="#">Saved</router-link></li>
                     <li @click="logoutUser" class="dropdown-item" href="#">Logout</li>
                 </ul>
             </div>
