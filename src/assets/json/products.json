@@ -111,7 +111,7 @@
             "image": "product-images/airpod.jpg"
         },
         {
-            "name": "Yahama Ns-wa Speakers",
+            "name": "Yahama Ns_wa Speakers",
             "category": "Computer accessories",
             "type": "Electronics",
             "price": 149000,
@@ -148,7 +148,7 @@
             "type": "Electronics",
             "price": 32000,
             "description": "A device used to capture video and audio for online communication.",
-            "image": "product-images/HHD.jpg"
+            "image": "product-images/HDD.jpg"
         }
     ]
 }

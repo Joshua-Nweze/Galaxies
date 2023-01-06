@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="fs-3 mt-3">Saved Products</div>
-        <div v-if="saved.length > 0">
+        <div v-if="isLoggedIn && saved.length > 0">
             <div class="row saved mt-4" v-for="(item, index) in saved" :key="item.index">
                 <div class="col-2">
                     <img v-if="item.image" :src="require(`../../assets/imgs/${item.image}`)" alt="" class="img-fluid">
@@ -29,7 +29,7 @@ import { useAuth } from '@/store/auth'
 import { storeToRefs } from 'pinia';
 let auth = useAuth()
 
-let { saved } = storeToRefs(auth);
+let { saved, isLoggedIn } = storeToRefs(auth);
 let { delSavedItem } = auth
 
 function delItem(index) {
