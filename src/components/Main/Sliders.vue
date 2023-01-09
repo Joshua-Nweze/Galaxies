@@ -26,22 +26,36 @@
         </div>
 
         <!-- Sell Product Modal -->
-        <div class="modal fade" id="sellProduct" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
-        <div class=" modal-dialog modal-dialog-centered ">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5">Wanna sell somthing?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body d-flex justify-content-center">
-                Login or Signup to continue
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <div @click="auth('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
-                <div @click="auth('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
-            </div>
+        <div v-if="isLoggedIn" class="modal fade" id="sellProduct" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Wanna sell somthing?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <button class="btn main-btn">Click to proceed</button>
+                </div>
+                </div>
             </div>
         </div>
+
+        <div v-else class="modal fade" id="sellProduct" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered ">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Wanna sell somthing?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    Login or Signup to continue
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div @click="authPage('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
+                    <div @click="authPage('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
+                </div>
+                </div>
+            </div>
         </div>
         <!-- Modal ends -->
     </div>
@@ -49,11 +63,16 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import {useAuth} from '@/store/auth'
+import { storeToRefs } from 'pinia'
+
+let auth = useAuth()
+let { isLoggedIn } = storeToRefs(auth)
 
 
 let router = useRouter()
 
-function auth(path) {
+function authPage(path) {
     setTimeout(() => {
         router.push(path)
     }, 100)

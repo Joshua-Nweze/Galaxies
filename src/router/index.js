@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { storeToRefs } from 'pinia'
 
-import {isLoggedIn} from '@/store/auth'
+import {useAuth} from '@/store/auth'
 
 const routes = [
   {
@@ -85,6 +85,8 @@ const routes = [
       title: 'Saved'
     },
     beforeEnter: (to, from) => {
+      let auth = useAuth()
+      let { isLoggedIn } = auth
       if(!isLoggedIn) {
         return { name: 'home' }
       }
