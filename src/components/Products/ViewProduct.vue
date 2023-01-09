@@ -60,21 +60,36 @@
         </div>
         <!-- Modal ends -->
 
-        <!-- Sell Product Modal -->
-        <div class="modal fade" id="sellerContact" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+        <!-- Seller Contact Modal -->
+        <div v-if="isLoggedIn" class="modal fade" id="sellerContact" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
         <div class=" modal-dialog modal-dialog-centered ">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5">Seller contact</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Seller contact</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    Phone: 0xxxxxxxxxx <br>
+                    Email: j**************
+                </div>
             </div>
-            <div class="modal-body d-flex justify-content-center">
-                Login or Signup to continue
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <div @click="to('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
-                <div @click="to('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
-            </div>
+        </div>
+        </div>
+
+        <div v-else class="modal fade" id="sellerContact" tabindex="-1" aria-labelledby="sellProductLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Seller contact</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    Login or Signup to continue
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div @click="to('/login')" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Login</div>
+                    <div @click="to('/signup')" type="button" class="btn main-btn" data-bs-dismiss="modal">Signup</div>
+                </div>
             </div>
         </div>
         </div>
@@ -101,7 +116,7 @@ let auth = useAuth()
 
 let { products, product } = storeToRefs(productsStore)
 let { retainProduct } = productsStore
-let { saved } = storeToRefs(auth)
+let { saved, isLoggedIn } = storeToRefs(auth)
 let { addToSaved } = auth
 
 let qty = ref(1)

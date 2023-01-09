@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { storeToRefs } from 'pinia'
+
+import {isLoggedIn} from '@/store/auth'
 
 const routes = [
   {
@@ -68,7 +71,7 @@ const routes = [
   },
   {
     path: '/dummy', 
-    name: 'search',
+    name: 'dummy',
     component: () => import(/* webpackChunkName: "search" */ "../components/Dummy"),
     meta: {
       title: 'Dummy'
@@ -80,7 +83,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "search" */ "../views/SavedView"),
     meta: {
       title: 'Saved'
-    }
+    },
+    beforeEnter: (to, from) => {
+      if(!isLoggedIn) {
+        return { name: 'home' }
+      }
+    },
   },
   {
     path: '/:pathMatch(.*)*', 
@@ -89,14 +97,6 @@ const routes = [
     meta: {
       title: '404 page'
     }
-  },
-  {
-    // path: '/about',
-    // name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
 ]
 
@@ -111,7 +111,11 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   document.title = `${to.meta.title}`
   next()
+
 })
+
+// router.beforeEach((to, from) => {
+// })
 
 
 export default router

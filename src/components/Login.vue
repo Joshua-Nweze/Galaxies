@@ -48,7 +48,7 @@ let { textInputValidate } = formInputValidator()
 let email = ref('')
 let pwd = ref('')
 let loginSuccess = ref(false)
-let alertMessage = ref('Login successful, taking you to home in 3 seconds')
+let alertMessage = ref('Login successful, taking back in 3 seconds')
 
 let emailErrMsg = ref('')
 let pwdErrMsg = ref('')
@@ -62,7 +62,7 @@ function login() {
         loginUser()
 
         setTimeout(() => {
-            router.push('/')
+            router.back()
         }, 3000)
     }
 }
