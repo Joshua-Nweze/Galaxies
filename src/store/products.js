@@ -4,7 +4,8 @@ import products from "../assets/json/products"
 export const useProducts = defineStore("products", {
     state: () => ({
         products: products,
-        product: ''
+        product: '',
+        cart: []
     }),
     actions: {
         getProducts(category) {
@@ -25,6 +26,11 @@ export const useProducts = defineStore("products", {
         retainProducts(routeType, routeCat){
             this.product = (this.products.product.map(product => product))
                 .filter(productsToRetain => productsToRetain.type.toLowerCase() == routeType && productsToRetain.category.toLowerCase() == routeCat)
+        },
+
+        addProductToCart(data){
+            this.cart.push(data)
+            console.log(this.cart);
         }
     }
 })

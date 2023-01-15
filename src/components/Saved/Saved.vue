@@ -18,13 +18,13 @@
                 </div>
             </div>
         </div>
-        <div v-if="saved.length < 0" class="fs-4 empty-saved text-center">
+        <div v-else class="fs-4 empty-saved text-center">
             Sorry, <br> You do not have any saved product
         </div>
 
-        <div v-if="!isLoggedIn" class="fs-4 empty-saved text-center">
+        <!-- <div v-if="!isLoggedIn" class="fs-4 empty-saved text-center">
             Please login to see saved products
-        </div>
+        </div> -->
     </div>
 </template>
 

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import { storeToRefs } from 'pinia'
 
 import {useAuth} from '@/store/auth'
 
@@ -106,7 +105,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    return { top: 0 }
+    return savedPosition || { top: 0 }
   }
 })
 

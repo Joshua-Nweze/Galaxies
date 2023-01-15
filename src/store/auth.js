@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useAuth = defineStore("auth", {
     state: () => ({
-        isLoggedIn: false,
+        isLoggedIn: true,
         saved: []
     }),
 
@@ -16,6 +16,11 @@ export const useAuth = defineStore("auth", {
         },
 
         addToSaved(product){
+            this.saved.map(item => {
+                item.name == product.name
+                return false
+            })
+            
             this.saved.unshift(product)
         },
 
