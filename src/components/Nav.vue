@@ -117,10 +117,12 @@ let numOfCartItems = computed(() => {
 })
 
 function showNav() {
-    document.getElementById('sideNav').style.left = 0
+    // document.getElementById('sideNav').style.left = 0
+    document.getElementById('sideNav').style.display = "block"
 }
 function hideNav() {
-    document.getElementById('sideNav').style.left = '-1550px'
+    // document.getElementById('sideNav').style.left = '-1550px'
+    document.getElementById('sideNav').style.display = "none"
 }
 
 function searchProduct() {
@@ -137,7 +139,8 @@ function searchProduct() {
         top: 0;
         right: 0;
         bottom: 0;
-        left: -1550px;
+        display: none;
+        /* left: -1550px; */
         position: fixed;
         background: white;
         z-index: 99;

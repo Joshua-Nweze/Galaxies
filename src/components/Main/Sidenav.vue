@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid side-nav">
         <div class="row" v-for="nav in navList" :key="nav.index">
-            <div class="btn-group dropend d- col-12">
+            <div class="btn-group dropend d- col-12 ">
                 <div class="dropdown col-12 d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
                     <img :src="require(`../../assets/imgs/${nav.image}`)" alt="" width="50px" class="img-fluid col-2">
                     <div class="col-9 nav-name">{{nav.name}}</div>
