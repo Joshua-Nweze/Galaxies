@@ -2,7 +2,7 @@
     <div class="container-fluid side-nav">
         <div class="row" v-for="nav in navList" :key="nav.index">
             <div class="btn-group dropend col-12 ">
-                <div class="dropdown col-12 d-flex align-items-center justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown col-12 d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
                     <img :src="require(`../../assets/imgs/${nav.image}`)" alt="" width="50px" class="img-fluid col-2 sideNav-img">
                     <div class="col-9 nav-name">{{nav.name}}</div>
                     <div class="col-1"><i class="bi bi-caret-right-fill d-flex justify-contents-end"></i></div>
@@ -93,7 +93,11 @@ function getProductCat(data) {
      @media only screen and (min-width: 1024px) {
         .sideNav-img{
             height: 40px;
-            width: 70px;
+            width: 40px;
+        }
+
+        .dropdown{
+            justify-content: center;
         }
      }
 </style>
