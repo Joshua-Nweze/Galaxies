@@ -1,11 +1,11 @@
 <template>
     <div class="container-fluid side-nav">
         <div class="row" v-for="nav in navList" :key="nav.index">
-            <div class="btn-group dropend d- col-12 ">
-                <div class="dropdown col-12 d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img :src="require(`../../assets/imgs/${nav.image}`)" alt="" width="50px" class="img-fluid col-2">
+            <div class="btn-group dropend col-12 ">
+                <div class="dropdown col-12 d-flex align-items-center justify-content-center" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img :src="require(`../../assets/imgs/${nav.image}`)" alt="" width="50px" class="img-fluid col-2 sideNav-img">
                     <div class="col-9 nav-name">{{nav.name}}</div>
-                    <div class="col-1"><i class="bi bi-caret-right-fill"></i></div>
+                    <div class="col-1"><i class="bi bi-caret-right-fill d-flex justify-contents-end"></i></div>
                 </div>
                 <ul class="dropdown-menu sidenav-dropdown">
                     <router-link :to="`/products/${nav.name.split(' ').join('-')}/${category.name.split(' ').join('-')}` " class="dropdown-item" @click="getProductCat(category.name)" v-for="category in nav.category" :key="category.index">{{ category.name}} </router-link>
@@ -89,4 +89,11 @@ function getProductCat(data) {
     .nav-name{
         padding-left: 7px;
     }
+
+     @media only screen and (min-width: 1024px) {
+        .sideNav-img{
+            height: 40px;
+            width: 70px;
+        }
+     }
 </style>

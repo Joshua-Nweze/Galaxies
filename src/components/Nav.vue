@@ -200,4 +200,6 @@ function searchProduct() {
             height: 40px;
         }
      }
+
+    
 </style>
